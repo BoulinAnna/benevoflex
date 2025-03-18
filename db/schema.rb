@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_03_18_132025) do
+ActiveRecord::Schema[7.1].define(version: 2025_03_18_144251) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,6 +66,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_18_132025) do
     t.bigint "organisation_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo_url"
     t.index ["organisation_id"], name: "index_missions_on_organisation_id"
   end
 
@@ -74,6 +75,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_03_18_132025) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photo_url"
   end
 
   create_table "participations", force: :cascade do |t|
