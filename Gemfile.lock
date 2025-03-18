@@ -1,4 +1,28 @@
 GIT
+  remote: https://github.com/activeadmin/activeadmin.git
+  revision: 781891d7407b80c67a5f47e68fc7e1eca07898d1
+  specs:
+    activeadmin (4.0.0.beta15)
+      arbre (~> 2.0)
+      csv
+      formtastic (>= 5.0)
+      formtastic_i18n (>= 0.7)
+      inherited_resources (~> 2.0)
+      kaminari (>= 1.2.1)
+      railties (>= 7.0)
+      ransack (>= 4.0)
+
+GIT
+  remote: https://github.com/activeadmin/inherited_resources.git
+  revision: 9db0b3ba3e68d1afdb3ae7f36e37051663fb03fd
+  specs:
+    inherited_resources (2.1.0)
+      actionpack (>= 7.0)
+      has_scope (>= 0.6)
+      railties (>= 7.0)
+      responders (>= 2)
+
+GIT
   remote: https://github.com/heartcombo/simple_form.git
   revision: c2c7faf3e532072e1ef511a97d677ae0e7c38957
   specs:
@@ -88,6 +112,8 @@ GEM
       tzinfo (~> 2.0)
     addressable (2.8.7)
       public_suffix (>= 2.0.2, < 7.0)
+    arbre (2.2.0)
+      activesupport (>= 7.0)
     autoprefixer-rails (10.4.19.0)
       execjs (~> 2)
     base64 (0.2.0)
@@ -118,6 +144,7 @@ GEM
     concurrent-ruby (1.3.5)
     connection_pool (2.5.0)
     crass (1.0.6)
+    csv (3.3.2)
     date (3.4.1)
     debug (1.10.0)
       irb (~> 1.10)
@@ -155,8 +182,14 @@ GEM
     ffi (1.17.1-x86_64-linux-musl)
     font-awesome-sass (6.7.2)
       sassc (~> 2.0)
+    formtastic (5.0.0)
+      actionpack (>= 6.0.0)
+    formtastic_i18n (0.7.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    has_scope (0.8.2)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
     i18n (1.14.7)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.1.0)
@@ -172,6 +205,18 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.10.2)
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
     logger (1.6.6)
     loofah (2.24.0)
       crass (~> 1.0.2)
@@ -268,6 +313,10 @@ GEM
       thor (~> 1.0, >= 1.2.2)
       zeitwerk (~> 2.6)
     rake (13.2.1)
+    ransack (4.3.0)
+      activerecord (>= 6.1.5)
+      activesupport (>= 6.1.5)
+      i18n
     rdoc (6.12.0)
       psych (>= 4.0.0)
     regexp_parser (2.10.0)
@@ -341,6 +390,7 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  activeadmin!
   autoprefixer-rails
   bootsnap
   bootstrap (~> 5.2)
@@ -351,6 +401,7 @@ DEPENDENCIES
   dotenv-rails
   font-awesome-sass (~> 6.1)
   importmap-rails
+  inherited_resources!
   jbuilder
   pg (~> 1.1)
   puma (>= 5.0)
