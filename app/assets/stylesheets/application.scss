@@ -10,3 +10,38 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+// Responsivité
+@media (max-width: 1024px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 12px;
+    padding: 5px;
+  }
+
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 10px;
+    padding: 2px;
+  }
+
+  h1 {
+    font-size: 18px;
+  }
+
+  .container {
+    width: 100%;
+  }
+}
