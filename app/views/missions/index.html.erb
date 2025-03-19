@@ -24,7 +24,7 @@
       <div class="d-flex flex-column " >
         <div class="position-relative card-list-container">
           <% @missions.each do |mission|%>
-            <div class="d-flex align-items-center position-absolute" data-controller="swipe">
+            <div class="d-flex align-items-center position-absolute gap-3" data-controller="swipe">
               <div data-action="click->swipe#dismiss">
                 <i class="fa-solid fa-circle-xmark fs-1"></i>
               </div>
