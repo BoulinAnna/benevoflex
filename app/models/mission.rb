@@ -1,5 +1,7 @@
 class Mission < ApplicationRecord
   belongs_to :organisation
+  has_many :favorites
+  has_many :users, through: :favorites
 
   validates :title, presence: true
   validates :category, presence: true

@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :participations, dependent: :destroy
   has_many :missions, through: :participations
+  has_many :favorites
+  has_many :missions, through: :favorites
 
   validates :username, presence: true
   validates :competence, presence: true
