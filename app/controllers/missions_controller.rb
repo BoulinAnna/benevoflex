@@ -1,4 +1,9 @@
 class MissionsController < ApplicationController
+
+  def show
+    @mission = Mission.find(params[:id])
+  end
+
   def index
     @missions = Mission.all
     @missions = @missions.where(address: params[:address]) if params[:address].present?
