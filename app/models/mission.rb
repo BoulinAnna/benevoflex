@@ -1,6 +1,6 @@
 class Mission < ApplicationRecord
   belongs_to :organisation
-  has_many :favorites
+  has_many :favorites, dependent: :destroy
   has_many :users, through: :favorites
 
   validates :title, presence: true
