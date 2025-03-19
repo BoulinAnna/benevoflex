@@ -44,10 +44,30 @@
     </div>
 
     <section class="testimonis row">
-      <div class="col-md-6">
+      <%# <div class="col-md-6">
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6"> %>
         <h3>Ils se sont engagés !</h3>
+                <!-- Slider main container -->
+        <div class="swiper" data-controller="carousel">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            ...
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          <!-- If we need scrollbar -->
+          <div class="swiper-scrollbar"></div>
+        </div>
 
         <p>
           LÉNA, 36 ANS - PROTECTION ANIMALE<br>
@@ -78,8 +98,14 @@
           "J’adore échanger avec les personnes âgées, mais je ne savais pas comment m’impliquer. Sur BenevoFlex, j’ai découvert qu’une maison de retraite cherchait
           des étudiants pour animer des jeux et discuter avec les résidents. Ça me fait du bien autant qu’à eux !"
          </p>
-         
-      </div>
+
+      <%# </div> %>
     </section>
   </div>
 </div>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
