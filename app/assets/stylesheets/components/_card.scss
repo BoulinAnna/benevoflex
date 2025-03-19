@@ -1,0 +1,48 @@
+.card {
+  display: flex;
+  width: 637px;
+  height: 646px;
+  flex-direction: column;
+  align-items: flex-start;
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: 2px solid var(--Border-borderOpaque, #E2E2E2);
+  background: var(--Background-backgroundPrimary, #FFF);
+  box-shadow: 5px 7px 7px 5px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(0.5px);
+
+  img {
+    width: 636px;
+    height: 366px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    border: 0px solid #000;
+    background: url(<path-to-image>) lightgray 1.368px -37.72px / 100% 130.328% no-repeat;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+
+}
+
+.card-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  h1 {
+    font-family: "Bowlby One SC";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+  }
+}
+
+
+.card-infos p {
+font-family: Oxygen;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 170.52%;
+}

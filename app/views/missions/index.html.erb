@@ -1,0 +1,45 @@
+<div class="container">
+
+  <%= form_with url: missions_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Recherchez une catégory" %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Search by " %>
+    <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+  <% end %>
+
+  <div class="row">
+    <div class="col d-flex justify-content-between align-items-center">
+      <div> <i class="fa-solid fa-circle-xmark fs-1"></i> </div>
+      <% @missions.each do |mission|%>
+          <div class="card">
+          <% if mission.photo_url? %>
+            <img src= '<%= image_tag mission.photo_url, width: 400, height: 300, crop: :fill%>' alt='photo mission'>
+            <div class="card-infos">
+              <div>
+                <h1><%= mission.title  %></h1>
+                <p><%= mission.description %></p>
+              </div>
+            </div>
+          <% else %>
+            <div class="card-infos">
+                <div>
+                  <h1><%= mission.title  %></h1>
+                  <p><%= mission.description %></p>
+                </div>
+              </div>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div> <i class="fa-solid fa-heart fs-1"></i> </div>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center py-5">
+    <%= link_to "J'accède à ma sélection", dashboard_path, class:"btn"%>
+  </div>
+</div>
