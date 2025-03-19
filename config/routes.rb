@@ -19,4 +19,6 @@ Rails.application.routes.draw do
       patch :accept
     end
   end
+
+  resources :favorites, only: %i[create destroy]
 end

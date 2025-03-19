@@ -1,45 +1,63 @@
-<div class="container">
+<div class="bg-success">
+  <div class="container">
+    <div class="row">
+      <div class="col d-flex">
+        <div class="bg-info">
+          <%= form_with model: @mission, url: missions_path, method: :get, class: "d-flex flex-column py-3" do |form| %>
 
-  <%= form_with url: missions_path, method: :get, class: "d-flex" do %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Recherchez une catégory" %>
-    <%= text_field_tag :query,
-      params[:query],
-      class: "form-control",
-      placeholder: "Search by " %>
-    <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
-  <% end %>
+            <%= form.collection_select :address, Mission.select(:address).distinct, :address, :address,
+                { prompt: "Sélectionnez une ville" },
+                { class: "form-control" } %>
 
-  <div class="row">
-    <div class="col d-flex justify-content-between align-items-center">
-      <div> <i class="fa-solid fa-circle-xmark fs-1"></i> </div>
-      <% @missions.each do |mission|%>
-          <div class="card">
-          <% if mission.photo_url? %>
-            <img src= '<%= image_tag mission.photo_url, width: 400, height: 300, crop: :fill%>' alt='photo mission'>
-            <div class="card-infos">
-              <div>
-                <h1><%= mission.title  %></h1>
-                <p><%= mission.description %></p>
-              </div>
-            </div>
-          <% else %>
-            <div class="card-infos">
-                <div>
-                  <h1><%= mission.title  %></h1>
-                  <p><%= mission.description %></p>
-                </div>
-              </div>
+            <%= form.collection_select :category, Mission.select(:category).distinct, :category, :category,
+                { prompt: "Sélectionnez une catégorie" },
+                { class: "form-control" } %>
+
+            <%= form.select :start_date, options_for_select(Mission.pluck(:start_date).uniq.map { |date| [date.strftime("%d/%m/%Y"), date] }, params.dig(:mission, :début)),
+                { prompt: "Sélectionnez une date" },
+                { class: "form-control" } %>
+
+            <%= form.submit "Rechercher", class: "btn mt-2" %>
           <% end %>
         </div>
-      <% end %>
 
-      <div> <i class="fa-solid fa-heart fs-1"></i> </div>
+        <div >
+          <div class="row">
+            <div class="col d-flex justify-content-between align-items-center">
+              <div> <i class="fa-solid fa-circle-xmark fs-1"></i> </div>
+              <% @missions.each do |mission|%>
+                <div class="card">
+                  <% if mission.photo_url? %>
+                    <img src= '<%= image_tag mission.photo_url, width: 400, height: 300, crop: :fill%>' alt='photo mission'>
+                    <div class="card-infos">
+                      <div>
+                        <h1><%= mission.title  %></h1>
+                        <p><%= mission.description %></p>
+                      </div>
+                    </div>
+                  <% else %>
+                    <div class="card-infos">
+                        <div>
+                          <h1><%= mission.title  %></h1>
+                          <p><%= mission.description %></p>
+                        </div>
+                      </div>
+                  <% end %>
+                   <div>
+                    <%= link_to favorites_path(mission), data: {turbo_method: :post} do %>
+                       <i class="fa-solid fa-heart fs-1"></i>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center py-5">
+          <%= link_to "J'accède à ma sélection", dashboard_path, class:"btn"%>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
-  <div class="d-flex justify-content-center py-5">
-    <%= link_to "J'accède à ma sélection", dashboard_path, class:"btn"%>
   </div>
 </div>
