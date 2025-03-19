@@ -1,0 +1,37 @@
+<div class="container mt-4">
+
+  <div class=first-section">
+  <div class="row">
+    <div class="col-12">
+      <%= image_tag "Image_essai.jpg"%>
+    </div>
+  </div>
+  </div>
+
+ <div class="second-section mt-5 position-relative">
+  <div class="row align-items-start">
+    <div class="col-md-4 d-flex justify-content-center position-relative">
+      <%= image_tag "Image_essai_2.png" %>
+    </div>
+
+
+
+    <div class="col-md-8 d-flex flex-column align-items-center third-section">
+      <h1><%= @mission.title %></h1>
+      <p class="lead text-justify"><%= @mission.description %></p>
+
+
+
+
+     <div class="last-part position-absolute bottom-0 start-0 p-0 w-100 d-flex w-100 mt-3">
+        <div class="col-6">
+            <%= link_to "Je m'engage", dashboard_path(@mission), class: "fw-bold text-uppercase bg-black" %>
+          </div>
+        <div class="col-6 d-flex justify-content-end">
+            <%= link_to "Retour sur mon espace", dashboard_path(@mission), class: "fw-bold text-uppercase bg-black" %>
+        </div>
+      </div>
+    </div>
+   </div>
+  </div>
+ </div>
