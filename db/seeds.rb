@@ -50,40 +50,40 @@ puts "Created #{Organisation.count} organisations"
 puts "Creating missions ..."
 
 Mission.create!(title: "Noël pour tous", description: "Noël pour tous consiste à collecter des dons (jouets, vêtements, nourriture) pendant la période des fêtes afin de les distribuer aux familles en difficulté. Les bénévoles participent à l'organisation des collectes, à la gestion des dons et à la distribution pour offrir un Noël solidaire à ceux qui en ont besoin. Un engagement chaleureux et concret pour faire briller l'esprit de Noël chez les plus démunis.",
-category: "Collecte et distribution", start_date:"2025 11 02", end_date: "2025 11 04", address: "Toulouse", organisation: coeurs_solidaires, photo_url: "" )
+category: "Collecte et distribution", start_date: Date.new(2025, 11, 02), end_date: Date.new(2025, 11, 04), address: "Toulouse", organisation: coeurs_solidaires, photo_url: "" )
 
 Mission.create!(title: "Collecte rentrée scolaire", description: "La Collecte rentrée scolaire consiste à recueillir des fournitures scolaires, des vêtements et des équipements pour les enfants issus de familles en difficulté. Les bénévoles aident à organiser les collectes, trier les dons et préparer les kits scolaires à distribuer avant la rentrée. Un engagement essentiel pour offrir à chaque enfant les outils nécessaires pour réussir sa scolarité.",
-category: "Collecte et distribution", start_date: "2025 07 15", end_date: "2025 07 15", address: "Albi", organisation: main_dans_la_main, photo_url: "" )
+category: "Collecte et distribution", start_date: Date.new(2025, 07, 15), end_date: Date.new(2025, 07, 15), address: "Albi", organisation: main_dans_la_main, photo_url: "" )
 
 Mission.create!(title: "Collecte alimentaire solidaire", description: "La Collecte alimentaire solidaire vise à recueillir des denrées alimentaires non périssables pour les distribuer aux personnes en situation de précarité. Les bénévoles participent à l'organisation des points de collecte, à la réception des dons et à la distribution dans les centres d'aide. Un acte de solidarité pour lutter contre la faim et la pauvreté dans la communauté.",
-category: "Collecte et distribution", start_date: "2025 04 12", end_date: "2025 04 13", address: "Carcassonne", organisation: solidarite_partagee, photo_url: "" )
+category: "Collecte et distribution", start_date: Date.new(2025, 04, 12), end_date: Date.new(2025, 04, 13), address: "Carcassonne", organisation: solidarite_partagee, photo_url: "" )
 
 Mission.create!(title: "Ma ville propre", description: "Ma ville propre consiste à organiser des opérations de nettoyage dans les espaces publics pour préserver l'environnement urbain. Les bénévoles participent à la collecte de déchets, au tri sélectif et à la sensibilisation des habitants à la propreté. Un engagement collectif pour rendre la ville plus agréable et respectueuse de l'environnement.",
-category: "Environnement et écologie", start_date:"2025 11 02", end_date: "2025 11 04", address: "Carcassonne", organisation: coeurs_solidaires, photo_url: "")
+category: "Environnement et écologie", start_date: Date.new(2025, 11, 02), end_date: Date.new(2025, 11, 04), address: "Carcassonne", organisation: coeurs_solidaires, photo_url: "")
 
 Mission.create!(title: "Les berges de Garonne", description: "Les berges de Garonne consiste à organiser des actions de nettoyage et de préservation des berges du fleuve, en ramassant les déchets et en protégeant la faune et la flore locales. Les bénévoles participent à l'entretien des espaces naturels, tout en sensibilisant le public à l'importance de la protection de l'environnement. Un engagement pour préserver la beauté et la biodiversité des berges de Garonne.",
-category: "Environnement et écologie", start_date: "2025 07 15", end_date: "2025 07 15", address: "Toulouse", organisation: main_dans_la_main, photo_url: "")
+category: "Environnement et écologie", start_date: Date.new(2025, 07, 15), end_date: Date.new(2025, 07, 15), address: "Toulouse", organisation: main_dans_la_main, photo_url: "")
 
 Mission.create!(title: "Quartier des Pommiers", description: "Quartier des Pommiers consiste à organiser des actions de nettoyage, de plantation d'arbres et de sensibilisation à la protection de l'environnement dans le quartier. Les bénévoles participent à l'embellissement des espaces publics, à la gestion des déchets et à la promotion du développement durable. Un engagement pour préserver la nature et améliorer la qualité de vie des habitants du quartier.",
-category: "Environnement et écologie", start_date: "2025 04 12", end_date: "2025 04 13", address: "Albi", organisation: solidarite_partagee, photo_url: "")
+category: "Environnement et écologie", start_date: Date.new(2025, 04, 12), end_date: Date.new(2025, 04, 13), address: "Albi", organisation: solidarite_partagee, photo_url: "")
 
 Mission.create!(title: "Mathématiques au primaire", description: "Mathématiques au primaire consiste à accompagner les élèves du primaire dans l'apprentissage des mathématiques en leur offrant un soutien personnalisé. Les bénévoles aident les enfants à renforcer leurs compétences, à surmonter leurs difficultés et à développer leur confiance en eux. Un engagement enrichissant pour favoriser la réussite scolaire et l'épanouissement des jeunes élèves.",
-category: "Soutien scolaire", start_date:"2025 11 02", end_date: "2025 11 04", address: "Albi", organisation: coeurs_solidaires, photo_url: "")
+category: "Soutien scolaire", start_date: Date.new(2025, 11, 02), end_date: Date.new(2025, 11, 04), address: "Albi", organisation: coeurs_solidaires, photo_url: "")
 
 Mission.create!(title: "Chinois LVB", description: "Chinois LVB consiste à accompagner les élèves dans l'apprentissage du chinois en tant que langue vivante étrangère (LVB). Les bénévoles aident les étudiants à améliorer leur compréhension, leur expression orale et écrite, tout en les motivant à découvrir la culture chinoise. Un engagement passionnant pour enrichir le parcours linguistique des jeunes apprenants.",
-category: "Soutien scolaire", start_date: "2025 07 15", end_date: "2025 07 15", address: "Carcassonne", organisation: main_dans_la_main, photo_url: "")
+category: "Soutien scolaire", start_date: Date.new(2025, 07, 15), end_date: Date.new(2025, 07, 15), address: "Carcassonne", organisation: main_dans_la_main, photo_url: "")
 
 Mission.create!(title: "Français de la 6ème à la 3ème", description: "Français de la 6ème à la 3ème consiste à accompagner les collégiens dans l'amélioration de leurs compétences en français, en particulier dans la lecture, l'écriture et la grammaire. Les bénévoles offrent un soutien individualisé pour aider les élèves à surmonter leurs difficultés et à renforcer leur confiance en leurs capacités. Un engagement précieux pour favoriser leur réussite scolaire et leur épanouissement intellectuel.",
-category: "Soutien scolaire", start_date: "2025 04 12", end_date: "2025 04 13", address: "Toulouse", organisation: solidarite_partagee, photo_url: "")
+category: "Soutien scolaire", start_date: Date.new(2025, 04, 12), end_date: Date.new(2025, 04, 13), address: "Toulouse", organisation: solidarite_partagee, photo_url: "")
 
 Mission.create!(title: "Les petites palettes", description: "Les petites palettes consiste à organiser des ateliers artistiques et créatifs pour les enfants, afin de stimuler leur imagination et leur sensibilité artistique. Les bénévoles encadrent des activités telles que la peinture, la sculpture ou la création de projets collectifs, tout en encourageant l'expression individuelle. Un engagement enrichissant pour favoriser l'épanouissement culturel des jeunes participants.",
-category: "Animation culturelle", start_date:"2025 11 02", end_date: "2025 11 04", address: "Toulouse", organisation: coeurs_solidaires, photo_url: "")
+category: "Animation culturelle", start_date: Date.new(2025, 11, 02), end_date: Date.new(2025, 11, 04), address: "Toulouse", organisation: coeurs_solidaires, photo_url: "")
 
 Mission.create!(title: "Modelage pour débutants", description: "Modelage pour débutants consiste à animer des ateliers d'initiation à l'art du modelage, où les participants apprennent à façonner l'argile et à découvrir les techniques de base. Les bénévoles accompagnent les débutants dans leurs créations, en les guidant et en les encourageant à exprimer leur créativité. Un engagement enrichissant pour partager la passion de l'art et développer les talents des participants.",
-category: "Animation culturelle", start_date: "2025 07 15", end_date: "2025 07 15", address: "Albi", organisation: main_dans_la_main, photo_url: "")
+category: "Animation culturelle", start_date: Date.new(2025, 07, 15), end_date: Date.new(2025, 07, 15), address: "Albi", organisation: main_dans_la_main, photo_url: "")
 
 Mission.create!(title: "Couture : trousse d'écolier", description: "Couture : trousse d'écolier consiste à animer des ateliers de couture où les participants apprennent à confectionner des trousses scolaires personnalisées. Les bénévoles accompagnent les apprenants dans la maîtrise des techniques de couture, tout en favorisant la créativité et la réalisation de projets pratiques. Un engagement enrichissant pour transmettre un savoir-faire tout en créant des objets utiles et uniques.",
-category: "Animation culturelle", start_date: "2025 04 12", end_date: "2025 04 13", address: "Carcassonne", organisation: solidarite_partagee, photo_url: "")
+category: "Animation culturelle", start_date: Date.new(2025, 04, 12), end_date: Date.new(2025, 04, 13), address: "Carcassonne", organisation: solidarite_partagee, photo_url: "")
 
 # modèle : Mission.create!(title: "", description: "", category: "", start_date: "", end_date: "", address: "", organisation_id:, photo_url: "")
 # 4 catégories : "Collecte et distribution", "Environnement et écologie", "Soutien scolaire", "Animation culturelle"
