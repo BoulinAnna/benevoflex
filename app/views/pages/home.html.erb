@@ -1,2 +1,111 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="hero-container">
+  <div class="separator"></div> <!-- Fond kaki -->
+  <div class="hero-image">
+    <%= image_tag 'hero2.jpg', class: 'img-fluid' %> <!-- L’image est indépendante du fond -->
+  </div>
+</div>
+
+<div class="page-content"> <!-- Cette div va faire descendre le kaki -->
+  <div class="container">
+    <section class="intro">
+      <p>
+        VOUS AIMERIEZ DONNER DE VOTRE TEMPS, MAIS VOUS NE SAVEZ PAS OÙ CHERCHER ?<br>
+        VOUS AVEZ PEUT-ÊTRE 1H PAR SEMAINE OU DES COMPÉTENCES SPÉCIFIQUES À OFFRIR PONCTUELLEMENT,<br>
+        MAIS AUCUNE PLATEFORME NE VOUS PERMET DE VOUS ENGAGER FACILEMENT ?
+      </p>
+      <h2>VOUS ÊTES AU BON ENDROIT</h2>
+    </section>
+  </div>
+
+  <section class="features row text-center">
+    <div class="col-md-3 feature">
+      <i class="fa fa-calendar"></i>
+      <h3>Des missions adaptées à votre emploi du temps</h3>
+    </div>
+
+    <div class="col-md-3 feature">
+      <i class="fa fa-hand-pointer"></i>
+      <h3>Swipez & Postulez en un clic</h3>
+    </div>
+
+    <div class="col-md-3 feature">
+      <i class="fa fa-check-circle"></i>
+      <h3>Engagez-vous selon vos compétences</h3>
+    </div>
+
+    <div class="col-md-3 feature">
+      <i class="fa fa-users"></i>
+      <h3>Un accès rapide aux associations</h3>
+    </div>
+  </section>
+
+    <div class="text-center">
+      <a href="<%= missions_path %>" class="btn-index">Par ici pour trouver votre mission</a>
+    </div>
+
+    <section class="testimonis row">
+      <%# <div class="col-md-6">
+      </div>
+      <div class="col-md-6"> %>
+        <h3>Ils se sont engagés !</h3>
+                <!-- Slider main container -->
+        <div class="swiper" data-controller="carousel">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">Slide 1</div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+            ...
+          </div>
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- If we need navigation buttons -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+
+          <!-- If we need scrollbar -->
+          <div class="swiper-scrollbar"></div>
+        </div>
+
+        <p>
+          LÉNA, 36 ANS - PROTECTION ANIMALE<br>
+          "Je voulais aider, mais je ne savais pas où chercher... Sur BenevoFlex, j'ai filtré par mes centres d’intérêt
+          et j'ai rapidement trouvé une association qui sauve des animaux. Je peux leur donner un coup de main quand
+          j’ai du temps libre. Trop facile !"
+        </p>
+        <p>
+          Emma, 21 ans - Aide aux devoirs
+        "Je voulais donner un peu de mon temps, mais entre les cours et les exams, ce n'était pas évident. Avec BenevoFlex,
+         j’ai trouvé une association qui propose de l’aide aux devoirs en ligne. Je peux aider des collégiens en maths depuis
+         chez moi, quand je veux ! Super pratique et gratifiant."
+         </p>
+
+         <p>
+          Lucas, 23 ans - Protection de l’environnement
+          "Je suis passionné par l’écologie et je voulais agir concrètement. Grâce à BenevoFlex, j’ai pu participer à des nettoyages de
+          plages et à des campagnes de sensibilisation. J’ai rencontré des gens inspirants et je me sens vraiment utile !"
+         </p>
+
+         <p>
+          Mélissa, 20 ans - Soutien aux sans-abri
+          "En tant qu’étudiante en psycho, je voulais comprendre les réalités sociales sur le terrain. J’ai trouvé une mission où j’aide
+          à distribuer des repas et à discuter avec des personnes sans-abri. Ça me permet d’apporter un peu de réconfort et de casser certaines idées reçues."
+         </p>
+         <p>
+          Jules, 22 ans - Animation en maison de retraite
+          "J’adore échanger avec les personnes âgées, mais je ne savais pas comment m’impliquer. Sur BenevoFlex, j’ai découvert qu’une maison de retraite cherchait
+          des étudiants pour animer des jeux et discuter avec les résidents. Ça me fait du bien autant qu’à eux !"
+         </p>
+
+      <%# </div> %>
+    </section>
+  </div>
+</div>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
