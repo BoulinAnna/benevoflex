@@ -1,24 +1,82 @@
-.swiper {
-  width: 600px;
-  height: 300px;
+// Section Témoignages (prend toute la largeur)
+.testimonials-section {
+  width: 100vw; // Toute la largeur de l'écran
+  background-color: $sable; // Fond sable
+  padding: 60px 0; // Espacement au-dessus et en dessous
 }
 
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
+// Conteneur principal des témoignages
+.testimonials-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%; // Réduit légèrement pour ne pas coller aux bords
+  margin: 0 auto;
+}
 
+// Titre des témoignages
+.testimonials-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: $navy;
+}
+
+// Conteneur du carrousel
+.swiper {
+  width: 90%; // Légèrement plus large pour remplir l'espace
   display: flex;
   justify-content: center;
+}
+
+// Slide individuel (image + texte)
+.testimonials-slide {
+  display: flex;
   align-items: center;
-}
-
-.swiper-slide img {
-  display: block;
+  justify-content: center;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  gap: 40px;
 }
 
-.swiper-button-prev, .swiper-button-next {
-  color: $sable !important
+// Image des témoignages
+.testimonials-slide img {
+  width: 40%;
+  height: auto;
+  border-radius: 10px;
+}
+
+// Bloc texte avec fond kaki
+.testimonials-text {
+  width: 45%;
+  padding: 20px;
+  background-color: $kaki;
+  border-radius: 10px;
+  color: $sable;
+  font-family: "Bowlby One SC", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+// Titre dans le témoignage
+.testimonials-text h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white;
+}
+
+// Flèches du carrousel
+.swiper-button-prev,
+.swiper-button-next {
+  color: $navy !important;
+  font-size: 24px;
+}
+
+.swiper-button-prev {
+  left: -40px;
+}
+
+.swiper-button-next {
+  right: -40px;
 }
