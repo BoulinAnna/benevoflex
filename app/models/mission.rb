@@ -2,6 +2,7 @@ class Mission < ApplicationRecord
   belongs_to :organisation
   has_many :favorites, dependent: :destroy
   has_many :users, through: :favorites
+  has_one_attached :photo
 
   validates :title, presence: true
   validates :category, presence: true
