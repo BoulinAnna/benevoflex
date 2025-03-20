@@ -2,6 +2,7 @@ class MissionsController < ApplicationController
 
   def show
     @mission = Mission.find(params[:id])
+    @organisation = @mission.organisation
   end
 
   def index
