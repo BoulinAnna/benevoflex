@@ -26,8 +26,8 @@
 }
 
 .h2  {
-  color: var(--Crme, #CED3CA);
-font-family: "Bowlby One";
+color: $sable;
+font-family: "Bowlby One SC, sans-serif" !important;
 font-size: 52px;
 font-style: normal;
 font-weight: 400;
@@ -54,7 +54,21 @@ flex-shrink: 0;
   text-align: center;
 }
 
+.organisations-text {
+  font-family: "Bowlby One SC", sans-serif;
+    font-size: 25px;
+    line-height: 1.5;
+  }
+
 .btn:hover {
   background-color: #0F141E !important; /* Légère variation au survol */
   border-color: #0F141E !important;
+}
+
+.font-paragrah {
+  color: var(--Crme, #CED3CA);
+font-family: Oxygen;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
 }
