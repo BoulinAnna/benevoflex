@@ -13,10 +13,12 @@ Rails.application.routes.draw do
   end
 
   get 'dashboard', to: 'pages#dashboard'
+  get 'organisation_dashboard', to: 'pages#organisation_dashboard'
 
   resources :participations, only: [] do
     member do
       patch :accept
+      patch :reject
     end
   end
 
