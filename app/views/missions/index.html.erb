@@ -1,7 +1,6 @@
 <div class="swipe">
   <div class="container">
     <div class="d-flex ">
-
       <div class="swipe-form">
         <%= form_with model: @mission, url: missions_path, method: :get, class: "d-flex flex-column py-3" do |form| %>
 
@@ -20,6 +19,7 @@
           <%= form.submit "Rechercher", class: "btn mt-2" %>
         <% end %>
       </div>
+
 
       <div class="swipe-card d-flex flex-column " >
         <div class="position-relative card-list-container">
@@ -55,6 +55,7 @@
             </div>
           <% end %>
         </div>
+
       </div>
     </div>
 
