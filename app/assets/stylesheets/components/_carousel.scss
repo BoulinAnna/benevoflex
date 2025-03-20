@@ -1,8 +1,10 @@
 // Section Témoignages (prend toute la largeur)
 .testimonials-section {
-  width: 100vw; // Toute la largeur de l'écran
-  background-color: $sable; // Fond sable
-  padding: 60px 0; // Espacement au-dessus et en dessous
+  width: 100vw; // Prend toute la largeur
+  background-color: $sable;
+  padding: 80px 0; // Ajoute un espace en haut et en bas
+  display: flex;
+  justify-content: center; // Centre le carrousel horizontalement
 }
 
 // Conteneur principal des témoignages
@@ -10,13 +12,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%; // Réduit légèrement pour ne pas coller aux bords
+  width: 85%;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 // Titre des témoignages
 .testimonials-title {
   text-align: center;
+  font-family: "Bowlby One SC", sans-serif;
   font-size: 28px;
   font-weight: bold;
   margin-bottom: 30px;
@@ -34,9 +38,11 @@
 .testimonials-slide {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between; // Assure que l'image est à gauche et le texte à droite
   width: 100%;
-  gap: 40px;
+  max-width: 1100px; // Limite la largeur max pour éviter que ça s’étale trop
+  gap: 40px; // Ajoute un espacement entre l’image et le texte
+  margin: 0 auto; // Centre le carrousel
 }
 
 // Image des témoignages
@@ -48,14 +54,15 @@
 
 // Bloc texte avec fond kaki
 .testimonials-text {
-  width: 45%;
-  padding: 20px;
+  width: 50%;
+  padding: 30px;
   background-color: $kaki;
   border-radius: 10px;
   color: $sable;
   font-family: "Bowlby One SC", sans-serif;
   font-size: 16px;
   line-height: 1.5;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); // Ajoute une ombre légère pour améliorer la lisibilité
 }
 
 // Titre dans le témoignage
@@ -71,12 +78,15 @@
 .swiper-button-next {
   color: $navy !important;
   font-size: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
 }
 
 .swiper-button-prev {
-  left: -40px;
+  left: -60px;
 }
 
 .swiper-button-next {
-  right: -40px;
+  right: -60px;
 }
