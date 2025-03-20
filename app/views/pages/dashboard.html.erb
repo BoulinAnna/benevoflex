@@ -1,0 +1,45 @@
+
+<h1>Ma sélection</h1>
+<% @favorites.each do |favorite| %>
+  <div class="card">
+      <% if favorite.mission.photo.attached? %>
+        <%= link_to cl_image_tag(favorite.mission.photo.key), mission_path(favorite.mission)%>
+      <% end %>
+      <div class="card-infos">
+        <div>
+          <h1><%= favorite.mission.title  %></h1>
+          <p><%= favorite.mission.description %></p>
+        </div>
+      </div>
+  </div>
+<% end %>
+
+<h2>Missions en attente de validation</h2>
+<% @pending_missions.each do |mission| %>
+  <div class="card">
+    <% if mission.photo.attached? %>
+        <%= cl_image_tag mission.photo.key%>
+    <% end %>
+    <div class="card-infos">
+      <div>
+        <h1><%= mission.title  %></h1>
+        <p><%= mission.description %></p>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<h3>Calendrier + liste des missions validées</h3>
+<% @accepted_missions.each do |mission| %>
+  <div class="card">
+    <% if mission.photo.attached? %>
+        <%= cl_image_tag mission.photo.key%>
+    <% end %>
+    <div class="card-infos">
+      <div>
+        <h1><%= mission.title  %></h1>
+        <p><%= mission.description %></p>
+      </div>
+    </div>
+  </div>
+<% end %>
