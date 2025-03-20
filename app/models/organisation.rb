@@ -1,5 +1,6 @@
 class Organisation < ApplicationRecord
   has_many :missions
+  has_one_attached :photo
 
   validates :name, presence: true
   validates :description, presence: true
