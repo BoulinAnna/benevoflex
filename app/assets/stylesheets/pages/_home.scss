@@ -1,1 +1,104 @@
 // Specific CSS for your home-page
+.hero-container {
+  width: 100%;
+  height: 500px; // Hauteur de l’image + transition
+  background: $sable; // Fond sable en haut
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-image {
+  width: 90%;
+  max-width: 1330px;
+  height: auto;
+  position: absolute;
+  bottom: -150px; // Fait dépasser l’image pour qu’elle repose bien
+  z-index: 2;
+}
+
+.page-content {
+  background: $kaki; // Fond kaki partout après le hero
+  min-height: 100vh; // Prend toute la hauteur restante
+  padding-top: 250px; // Ajoute de l’espace sous l’image
+}
+
+.intro {
+  width: 80%; // Ajuste la largeur pour être plus fluide
+  max-width: 1029px;
+  margin: 0 auto; // Centre le bloc horizontalement
+  color: $sable; // Couleur adaptée pour le contraste
+  text-align: center;
+  font-family: "Bowlby One SC";
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 2; // Meilleure lisibilité
+  padding-top: 60px; // Ajoute un espace au-dessus et en dessous
+
+  p {
+    margin-bottom: 80px; // Ajoute un espace sous le texte
+  }
+
+  h2 {
+    color: $sable;
+    font-family: "Bowlby One SC";
+    font-size: 37px;
+    font-weight: 400;
+    line-height: normal;
+    margin-top: 30px; // Ajoute un espace au-dessus du titre
+  }
+}
+
+.btn-index {
+  margin-top: 80px;
+  display: inline-block; // Pour que le bouton prenne la bonne largeur
+  width: 449px;
+  height: 90px;
+  flex-shrink: 0;
+  background: $navy; // Couleur de fond (remplace `$navy` par la couleur voulue)
+  color: $sable; // Texte blanc pour un bon contraste
+  font-family: "Bowlby One SC";
+  font-size: 16px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 90px; // Pour centrer verticalement le texte
+  border-radius: 10px;
+  border: none;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    background: darken($navy, 10%);
+    transform: scale(1.05);
+  }
+}
+
+.features {
+  display: flex;
+  justify-content: space-between; // Espace uniforme entre les icônes
+  align-items: center;
+  margin-top: 50px; // Ajuste l’espace au-dessus
+  padding: 0 50px; // Ajoute un padding pour éviter que les pictos collent au bord
+  gap: 30px; // Espacement entre les éléments
+}
+
+.feature {
+  text-align: center;
+  max-width: 250px; // Largeur max des blocs
+}
+
+.feature i {
+  font-size: 50px; // Taille des icônes FontAwesome
+  color: $navy; // Couleur de l’icône (peut être ajustée)
+  margin-bottom: 15px; // Espacement entre l'icône et le texte
+}
+
+.feature h3 {
+  font-family: "Bowlby One SC", sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  color: #CED3CA;
+  line-height: 1.3;
+}
