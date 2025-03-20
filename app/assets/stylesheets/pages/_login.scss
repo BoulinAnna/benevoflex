@@ -1,3 +1,35 @@
-.log {
+.log-container {
   background-color: $kaki;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 630px;
 }
+
+.log {
+  background-color: $navy;
+  width: 40%;
+  padding: 30px;
+  margin-top: 100px;
+  border-radius: 5px;
+
+  h2 {
+    font-family: "Bowlby One SC";
+    color: $sable;
+  }
+
+  label {
+    font-family: "Oxygen";
+    color: $sable;
+  }
+
+  a {
+    font-family: "Oxygen";
+    color: $sable;
+    text-decoration: none;
+  }
+}
+
+// edit-html.erb : va s'afficher ?
+// text-align center
+// input[type=submit]
