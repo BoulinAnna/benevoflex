@@ -19,8 +19,8 @@
     border: 0px solid #000;
     background: url(<path-to-image>) lightgray 1.368px -37.72px / 100% 130.328% no-repeat;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    object-fit: cover;
   }
-
 }
 
 .card-infos {
@@ -37,7 +37,6 @@
     line-height: 32px;
   }
 }
-
 
 .card-infos p {
 font-family: Oxygen;

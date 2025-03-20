@@ -24,28 +24,21 @@
       <div class="swipe-card d-flex flex-column " >
         <div class="position-relative card-list-container">
           <% @missions.each do |mission|%>
-            <div class="whole-card d-flex align-items-center position-absolute gap-3" data-controller="swipe">
-              <div data-action="click->swipe#dismiss">
-                <i class="fa-solid fa-circle-xmark fs-1"></i>
+            <div class="d-flex align-items-center position-absolute gap-3" data-controller="swipe">
+              <div class="pointer" data-action="click->swipe#dismiss">
+                <i class="fa-solid fa-circle-xmark fs-1 "></i>
               </div>
 
               <div class="card">
-                <% if mission.photo_url? %>
-                  <img src= '<%= image_tag mission.photo_url, crop: :fill%>' alt='photo mission'>
-                  <div class="card-infos">
-                    <div>
-                      <h1><%= mission.title  %></h1>
-                      <p><%= mission.description %></p>
-                    </div>
-                  </div>
-                <% else %>
-                  <div class="card-infos">
-                      <div>
-                        <h1><%= mission.title  %></h1>
-                        <p><%= mission.description %></p>
-                      </div>
-                    </div>
+                <% if mission.photo.attached? %>
+                  <%= cl_image_tag mission.photo.key%>
                 <% end %>
+                <div class="card-infos">
+                  <div>
+                    <h1><%= mission.title  %></h1>
+                    <p><%= mission.description %></p>
+                  </div>
+                </div>
               </div>
               <div>
                 <%= link_to favorites_path(mission), data: {turbo_method: :post, action:"click->swipe#dismiss"} do %>
