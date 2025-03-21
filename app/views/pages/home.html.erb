@@ -13,7 +13,9 @@
         VOUS AVEZ PEUT-ÊTRE 1H PAR SEMAINE OU DES COMPÉTENCES SPÉCIFIQUES À OFFRIR PONCTUELLEMENT,<br>
         MAIS AUCUNE PLATEFORME NE VOUS PERMET DE VOUS ENGAGER FACILEMENT ?
       </p>
-      <h2>VOUS ÊTES AU BON ENDROIT</h2>
+      <div class="intro-bis">
+        <h2>VOUS ÊTES AU BON ENDROIT</h2>
+      </div>
     </section>
   </div>
 
@@ -44,72 +46,104 @@
     </div>
 
 
-      <!-- Section Témoignages -->
-<section class="testimonials-section">
-  <div class="testimonials-container">
-    <h2 class="testimonials-title">Ils se sont engagés !</h2>
-
-    <!-- Slider Swiper -->
-    <div class="swiper" data-controller="carousel">
-      <div class="swiper-wrapper">
-
-        <!-- Slide 1 -->
-        <div class="swiper-slide testimonials-slide">
-          <%= image_tag asset_path('Rectangle_4474.jpg'), class: 'img-fluid' %>
-          <div class="testimonials-text">
-            <h3>Léna, 36 ans - Protection animale</h3>
-            <p>"Je voulais aider, mais je ne savais pas où chercher... Sur BenevoFlex, j’ai filtré par mes centres d’intérêt et j’ai trouvé une association qui sauve des animaux. Je peux les aider quand j’ai du temps libre. Trop facile !"</p>
-          </div>
+        <!-- Section Témoignages -->
+    <section class="testimonials-section">
+      <div class="testimonials-container">
+        <div class="testimonials-big-title">
+          <h2>Ils se sont engagés !</h2>
         </div>
 
-        <!-- Slide 2 -->
-        <div class="swiper-slide testimonials-slide">
-          <%= image_tag asset_path('Rectangle_4474.jpg'), class: 'img-fluid' %>
-          <div class="testimonials-text">
-            <h3>Emma, 21 ans - Aide aux devoirs</h3>
-            <p>"Entre les cours et les exams, ce n'était pas évident de donner de mon temps. BenevoFlex m’a permis de trouver une association pour aider des collégiens en maths, quand je veux !"</p>
-          </div>
-        </div>
+        <!-- Slider Swiper -->
+        <div class="swiper" data-controller="carousel">
+          <div class="swiper-wrapper">
 
-        <!-- Slide 3 -->
-        <div class="swiper-slide testimonials-slide">
-          <%= image_tag asset_path('Rectangle_4474.jpg'), class: 'img-fluid' %>
-          <div class="testimonials-text">
-            <h3>Lucas, 23 ans - Protection de l’environnement</h3>
-            <p>"Je voulais agir concrètement pour l’écologie. Grâce à BenevoFlex, j’ai participé à des nettoyages de plages et rencontré des gens inspirants. Je me sens vraiment utile !"</p>
-          </div>
-        </div>
+            <!-- Slide 1 -->
+            <div class="swiper-slide">
+              <div class="testimonial-content">
+                <%= image_tag asset_path('Rectangle_4474.jpg'), class: 'testimonial-image' %>
+                <div class="testimonials-text">
+                  <h3>Léna, 36 ans - Protection animale</h3>
+                  <p>
+                    "Je voulais aider, mais je ne savais pas où chercher...
+                    Sur BenevoFlex, j’ai filtré par mes centres d’intérêt
+                    et j’ai trouvé une association qui sauve des animaux.
+                    Je peux les aider quand j’ai du temps libre. Trop facile !"
+                  </p>
+                </div>
+              </div>
+            </div>
 
-        <!-- Slide 4 -->
-        <div class="swiper-slide testimonials-slide">
-          <%= image_tag asset_path('Rectangle_4474.jpg'), class: 'img-fluid' %>
-          <div class="testimonials-text">
-            <h3>Mélissa, 20 ans - Soutien aux sans-abri</h3>
-            <p>"J’ai trouvé une mission où j’aide à distribuer des repas et discuter avec des personnes sans-abri. Ça me permet de casser certaines idées reçues."</p>
-          </div>
-        </div>
+            <!-- Slide 2 -->
+            <div class="swiper-slide">
+              <div class="testimonial-content">
+                <%= image_tag asset_path('Rectangle_4474.jpg'), class: 'testimonial-image' %>
+                <div class="testimonials-text">
+                  <h3>Emma, 21 ans - Aide aux devoirs</h3>
+                  <p>
+                    "Entre les cours et les exams, ce n'était pas évident de donner de mon temps.
+                    BenevoFlex m’a permis de trouver une association pour aider des collégiens en maths,
+                    quand je veux !"
+                  </p>
+                </div>
+              </div>
+            </div>
 
-        <!-- Slide 5 -->
-        <div class="swiper-slide testimonials-slide">
-          <%= image_tag asset_path('Rectangle_4474.jpg'), class: 'img-fluid' %>
-          <div class="testimonials-text">
-            <h3>Jules, 22 ans - Animation en maison de retraite</h3>
-            <p>"J’adore échanger avec les personnes âgées. Sur BenevoFlex, j’ai découvert qu’une maison de retraite cherchait des étudiants pour animer des jeux et discuter avec les résidents. Ça me fait du bien autant qu’à eux !"</p>
+            <!-- Slide 3 -->
+            <div class="swiper-slide">
+              <div class="testimonial-content">
+                <%= image_tag asset_path('Rectangle_4474.jpg'), class: 'testimonial-image' %>
+                <div class="testimonials-text">
+                  <h3>Lucas, 23 ans - Protection de l’environnement</h3>
+                  <p>
+                    "Je voulais agir concrètement pour l’écologie. Grâce à BenevoFlex,
+                    j’ai participé à des nettoyages de plages et rencontré des gens inspirants.
+                    Je me sens vraiment utile !"
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4 -->
+            <div class="swiper-slide">
+              <div class="testimonial-content">
+                <%= image_tag asset_path('Rectangle_4474.jpg'), class: 'testimonial-image' %>
+                <div class="testimonials-text">
+                  <h3>Mélissa, 20 ans - Soutien aux sans-abri</h3>
+                  <p>
+                    "J’ai trouvé une mission où j’aide à distribuer des repas et discuter avec des personnes sans-abri.
+                    Ça me permet de casser certaines idées reçues."
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 5 -->
+            <div class="swiper-slide">
+              <div class="testimonial-content">
+                <%= image_tag asset_path('Rectangle_4474.jpg'), class: 'testimonial-image' %>
+                <div class="testimonials-text">
+                  <h3>Jules, 22 ans - Animation en maison de retraite</h3>
+                  <p>
+                    "J’adore échanger avec les personnes âgées. Sur BenevoFlex,
+                    j’ai découvert qu’une maison de retraite cherchait des étudiants
+                    pour animer des jeux et discuter avec les résidents.
+                    Ça me fait du bien autant qu’à eux !"
+                  </p>
+                </div>
+              </div>
+            </div>
+
           </div>
+
+          <!-- Pagination -->
+          <div class="swiper-pagination"></div>
+
+          <!-- Navigation -->
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
         </div>
       </div>
-
-      <!-- Pagination -->
-      <div class="swiper-pagination"></div>
-
-      <!-- Navigation -->
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
-  </div>
-</section>
-
-
+    </section>
   </div>
 </div>
   <link

@@ -3,6 +3,7 @@ class Mission < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :users, through: :favorites
   has_one_attached :photo
+  has_many :participations
 
   validates :title, presence: true
   validates :category, presence: true
