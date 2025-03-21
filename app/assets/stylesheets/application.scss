@@ -12,6 +12,18 @@
 @import "pages/index";
 
 
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 100vh;
+  margin: 0;
+}
+
+main {
+  flex-grow: 1;
+}
+
 // Responsivité
 @media (max-width: 1024px) {
   body {
