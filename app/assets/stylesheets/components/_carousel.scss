@@ -1,7 +1,33 @@
+.testimonials-container{
+  margin-top: 80px;
+  background-color: $sable;
+  margin-top: 50px;
+  margin-inline: 83px;
+}
+
 // Assure que chaque slide a une structure bien définie
 .swiper-slide {
   display: flex;
   justify-content: center;
+}
+
+.testimonials-big-title{
+  margin-top: 100px;
+  margin-bottom: 70px;
+  margin-top: 50px;
+  text-align: center;
+
+  h2 {
+
+    color: $navy;
+    font-family: "Bowlby One SC";
+    font-size: 25px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1px;
+    margin-top: 30px; // Ajoute un espace au-dessus du titre
+  }
+
 }
 
 // Titre des témoignages
@@ -12,6 +38,17 @@
   font-weight: bold;
   margin-bottom: 30px;
   color: $navy;
+  letter-spacing: 1px;
+
+  h2 {
+    color: $navy;
+    font-family: "Bowlby One SC";
+    font-size: 22px;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1px;
+    margin-top: 30px; // Ajoute un espace au-dessus du titre
+  }
 }
 
 // Conteneur de chaque témoignage (image + texte)
@@ -29,20 +66,35 @@
 .testimonial-image {
   width: 45%;
   height: auto;
-  border-radius: 10px;
+  border-radius: 3px;
 }
 
 // Bloc texte avec fond kaki
 .testimonials-text {
-  width: 50%;
-  padding: 20px;
   background-color: $kaki;
-  border-radius: 10px;
-  color: $sable;
-  font-family: "Bowlby One SC", sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  text-align: left;
+  width: 91%;
+  padding: 80px;
+  border-radius: 3px;
+
+  h3 {
+    color: $sable;
+    font-family: "Bowlby One SC", sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: left;
+    letter-spacing: 1px;
+  }
+
+  p {
+    margin-bottom: -40px; // Ajoute un espace sous le texte
+    color: $sable;
+    text-align: center;
+    font-family: "Oxygen";
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 166.667% */
+  }
 }
 
 // Correction pour les flèches du carrousel
@@ -59,8 +111,10 @@
 
 .swiper-button-prev {
   left: 10px;
+  margin-left: 30px;
 }
 
 .swiper-button-next {
   right: 10px;
+  margin-right: 30px;
 }
