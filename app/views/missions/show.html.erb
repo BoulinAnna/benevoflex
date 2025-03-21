@@ -1,13 +1,12 @@
 <div class="background">
  <div class="container">
      <div class="row justify-content-center">
-      <div class="col-md-12">
-       <%= cl_image_tag(@organisation.photo.key, class: "association-image", alt: @organisation.name)%>
+      <div class="col-md-16">
+        <%= cl_image_tag(@organisation.photo.key, class: "association-image", alt: @organisation.name, width: 1300, height: 500, crop: :fill, gravity: :auto) %>
       </div>
-    </div>
-  </div>
+     </div>
  </div>
-
+</div>
 
 <div class="full-page-bg">
   <div class="second-section position-relative">
@@ -16,7 +15,7 @@
 
 
  <div class="col-md-3 d-flex justify-content-center align-items-start">
-    <%= cl_image_tag(@mission.photo.key, class: "mission-image", alt: @mission.title) %>
+    <%= cl_image_tag(@mission.photo.key, class: "mission-image", alt: @mission.title, width: 300, height: 300, crop: :fill, gravity: :auto) %>
   </div>
 
 
@@ -29,7 +28,7 @@
 
   <div class="mt-3 w-100 d-flex justify-content-between">
     <div class="col-md-3">
-       <%= link_to "Je m'engage", dashboard_path(@mission), class: "btn fw-bold text-uppercase bg-black w-100" %>
+       <%= link_to "Je m'engage", mission_participations_path(@mission), data: { turbo_method: :post }, class: "btn fw-bold text-uppercase bg-black w-100" %>
     </div>
     <div class="col-md-3 text-end">
        <%= link_to "Retour sur mon espace", dashboard_path(@mission), class: "btn fw-bold text-uppercase bg-black w-100" %>

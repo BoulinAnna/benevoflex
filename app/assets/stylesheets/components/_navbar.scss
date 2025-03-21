@@ -1,6 +1,17 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: $navy;
+  padding: 10px 50px;
+
+  a{
+    color: $sable;
+    font-family: "Oxygen";
+    font-size: 20px;
+  }
+
+  i{
+    font-size: 30px;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {

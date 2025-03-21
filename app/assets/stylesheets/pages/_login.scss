@@ -1,3 +1,32 @@
-.log {
+.log-container {
   background-color: $kaki;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.log {
+  background-color: $navy;
+  width: 40%;
+  padding: 30px;
+  margin-top: 55px;
+  margin-bottom: 55px;
+  border-radius: 5px;
+
+  h2 {
+    font-family: "Bowlby One SC";
+    color: $sable;
+  }
+
+  label {
+    font-family: "Oxygen";
+    color: $sable;
+  }
+
+  a {
+    font-family: "Oxygen";
+    color: $sable;
+    text-decoration: none;
+  }
 }

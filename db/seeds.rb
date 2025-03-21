@@ -20,11 +20,12 @@ puts "cleaning DB users"
 User.destroy_all
 
 puts "create a user"
-User_Demo = User.create!(email: "demo@mail.com", password: "123456")
+User_Demo = User.create!(email: "demo@mail.com", username: "demo_guy", password: "123456")
+admin = User.create!(email: "anna@mail.com", password: "123456", username: "Anna", admin: true)
 
 puts "Creating organisations ..."
 
-coeurs_solidaires = Organisation.create!(name: "Cœurs Solidaires",
+coeurs_solidaires = Organisation.create!(user: admin, name: "Cœurs Solidaires",
 description: "Cœurs Solidaires est une association caritative dédiée à venir en aide aux personnes en situation de précarité et d'isolement. Elle organise des collectes de vêtements, de nourriture et de produits de première nécessité, qu'elle distribue aux familles et individus dans le besoin. L'association met également en place des actions de solidarité telles que des repas partagés, des événements de soutien et des accompagnements personnalisés. Son objectif est de créer des liens solidaires au sein de la communauté et d'offrir un soutien moral et matériel aux plus vulnérables. Grâce à l'engagement de ses bénévoles, Cœurs Solidaires œuvre chaque jour pour un monde plus inclusif et bienveillant.")
 coeurs_solidaires.photo.attach(
 io: File.open(Rails.root.join("db/organisations/1coeurs.jpg")),
@@ -33,7 +34,7 @@ content_type: "image/jpg"
 )
 coeurs_solidaires.save
 
-main_dans_la_main = Organisation.create!(name: "Main dans la Main",
+main_dans_la_main = Organisation.create!(user: admin, name: "Main dans la Main",
 description: "Main dans la main est une association caritative qui œuvre pour l'inclusion sociale et l'autonomie des personnes en difficulté. Elle propose des actions de soutien concret telles que la distribution de nourriture, de vêtements, ainsi que des accompagnements dans la recherche d’emploi ou de logement. L'association met également en place des événements communautaires pour renforcer les liens entre les habitants et favoriser l'entraide. Grâce à une équipe de bénévoles engagés, Main dans la main offre un soutien moral et matériel pour redonner espoir et dignité aux plus démunis. Son but est de créer un réseau solidaire où chacun trouve sa place et peut compter sur l'autre.")
 main_dans_la_main.photo.attach(
 io: File.open(Rails.root.join("db/organisations/1main.jpg")),
@@ -42,7 +43,7 @@ content_type: "image/jpg"
 )
 main_dans_la_main.save
 
-solidarite_partagee = Organisation.create!(name: "Solidarité Partagée",
+solidarite_partagee = Organisation.create!(user: admin, name: "Solidarité Partagée",
 description: "Solidarité Partagée est une association caritative dédiée à l'entraide et à la redistribution des ressources aux personnes en situation de précarité. Elle organise des collectes de biens essentiels tels que des vêtements, des denrées alimentaires et des produits d'hygiène, puis les redistribue aux personnes dans le besoin. L'association mène également des actions de soutien social et éducatif pour aider les bénéficiaires à surmonter leurs difficultés. Grâce à un réseau de bénévoles impliqués, Solidarité Partagée favorise l'inclusion et l'autonomisation des plus vulnérables. Son objectif est de bâtir une société plus solidaire où l'entraide devient une valeur partagée par tous.")
 solidarite_partagee.photo.attach(
 io: File.open(Rails.root.join("db/organisations/1solidarite.jpg")),

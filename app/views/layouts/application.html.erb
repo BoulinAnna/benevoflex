@@ -9,14 +9,17 @@
     <link rel="stylesheet" href="https://use.typekit.net/jtv1qeu.css">
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-    
+
 
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-
-    <%= yield %>
+  <body>
+    <%= render "shared/navbar" %>
+    <main>
+      <%= render "shared/flashes" %>
+      <%= yield %>
+    </main>
+     <%= render "shared/footer" %>
   </body>
 
 </html>
