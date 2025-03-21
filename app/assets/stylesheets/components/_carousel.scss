@@ -1,20 +1,7 @@
-// Section Témoignages (prend toute la largeur)
-.testimonials-section {
-  width: 100vw; // Prend toute la largeur
-  background-color: $sable;
-  padding: 80px 0; // Ajoute un espace en haut et en bas
+// Assure que chaque slide a une structure bien définie
+.swiper-slide {
   display: flex;
-  justify-content: center; // Centre le carrousel horizontalement
-}
-
-// Conteneur principal des témoignages
-.testimonials-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 85%;
-  max-width: 1200px;
-  margin: 0 auto;
+  justify-content: center;
 }
 
 // Titre des témoignages
@@ -27,27 +14,20 @@
   color: $navy;
 }
 
-// Conteneur du carrousel
-.swiper {
-  width: 90%; // Légèrement plus large pour remplir l'espace
-  display: flex;
-  justify-content: center;
-}
-
-// Slide individuel (image + texte)
-.testimonials-slide {
+// Conteneur de chaque témoignage (image + texte)
+.testimonial-content {
   display: flex;
   align-items: center;
-  justify-content: space-between; // Assure que l'image est à gauche et le texte à droite
-  width: 100%;
-  max-width: 1100px; // Limite la largeur max pour éviter que ça s’étale trop
-  gap: 40px; // Ajoute un espacement entre l’image et le texte
-  margin: 0 auto; // Centre le carrousel
+  justify-content: space-between; // Sépare l'image et le texte
+  width: 80%;
+  max-width: 1100px;
+  gap: 20px;
+  margin: 0 auto;
 }
 
 // Image des témoignages
-.testimonials-slide img {
-  width: 40%;
+.testimonial-image {
+  width: 45%;
   height: auto;
   border-radius: 10px;
 }
@@ -55,38 +35,32 @@
 // Bloc texte avec fond kaki
 .testimonials-text {
   width: 50%;
-  padding: 30px;
+  padding: 20px;
   background-color: $kaki;
   border-radius: 10px;
   color: $sable;
   font-family: "Bowlby One SC", sans-serif;
   font-size: 16px;
   line-height: 1.5;
-  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1); // Ajoute une ombre légère pour améliorer la lisibilité
+  text-align: left;
 }
 
-// Titre dans le témoignage
-.testimonials-text h3 {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: white;
-}
-
-// Flèches du carrousel
+// Correction pour les flèches du carrousel
 .swiper-button-prev,
 .swiper-button-next {
-  color: $navy !important;
-  font-size: 24px;
+  color: rgba(0, 0, 0, 0.5) !important;
+  font-size: 32px;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
   z-index: 10;
+  transition: opacity 0.3s ease;
 }
 
 .swiper-button-prev {
-  left: -60px;
+  left: 10px;
 }
 
 .swiper-button-next {
-  right: -60px;
+  right: 10px;
 }
