@@ -20,8 +20,8 @@ puts "cleaning DB users"
 User.destroy_all
 
 puts "create a user"
-User_Demo = User.create!(email: "demo@mail.com", password: "123456")
-admin = User.create!(email: "anna@mail.com", password: "123456", admin: true)
+User_Demo = User.create!(email: "demo@mail.com", username: "demo_guy", password: "123456")
+admin = User.create!(email: "anna@mail.com", password: "123456", username: "Anna", admin: true)
 
 puts "Creating organisations ..."
 

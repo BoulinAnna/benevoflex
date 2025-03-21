@@ -1,0 +1,30 @@
+<h1> Mes participations en attente</h1>
+<% @missions.each_with_index do |mission, index| %>
+  <% if @participations_per_mission[index].any? %>
+    <%= mission.title %>
+    <% @participations_per_mission[index].each do |participation| %>
+      <li>
+        <%= participation.user.username %>
+        <%= button_to "accepter", accept_participation_path(participation), method: :patch, class:"btn btn-sm" %>
+        or
+        <%= button_to "refuser",  reject_participation_path(participation), method: :patch, class:"btn btn-sm" %>
+      </li>
+    <% end %>
+  <% end %>
+<% end %>
+
+
+<h1>Mes missions mises à disposition</h1>
+<% @missions.each do |mission| %>
+  <div class="card">
+    <% if mission.photo.attached? %>
+        <%= link_to cl_image_tag(mission.photo.key), mission_path(mission)%>
+      <% end %>
+    <div class="card-infos">
+      <div>
+        <h1><%= mission.title  %></h1>
+        <p><%= mission.description %></p>
+      </div>
+    </div>
+  </div>
+<% end %>
