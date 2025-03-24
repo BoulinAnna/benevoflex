@@ -14,12 +14,13 @@ class MissionsController < ApplicationController
 
   def create
     @mission = Mission.new(misison_params)
-    @misison.organisation = current_user.organisation.first
+    @misison.organisation = current_user.organisations.find(params[:mission][:organisation_id])
 
     if @mission.save
       redirect_to organisation_dashboard_path, notice: "Mission créée avec succès."
     else
-      @missions.participations.where(status: "pending")
+      @missions = current_user.organisations.first.missions
+      render "pages/organisation_dashboard", status: :unprocessable_entity
     end
   end
 
