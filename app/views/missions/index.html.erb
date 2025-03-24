@@ -29,36 +29,36 @@
       </div>
 
       <div class="central-elements">
-            <div class="swipe-card d-flex position-relative card-list-container">
-              <% @missions.each do |mission|%>
-                <div class="d-flex align-items-center position-absolute gap-3" data-controller="swipe">
-                  <div class="pointer" data-action="click->swipe#dismiss">
-                    <i class="fa-solid fa-circle-xmark fs-1 "></i>
-                  </div>
+        <div class="swipe-card d-flex position-relative card-list-container">
+          <% @missions.each do |mission|%>
+            <div class="d-flex align-items-center position-absolute gap-3" data-controller="swipe">
+              <div class="pointer" data-action="click->swipe#dismiss">
+                <i class="fa-solid fa-circle-xmark fs-1 "></i>
+              </div>
 
-                  <div class="card">
-                    <% if mission.photo.attached? %>
-                      <%= cl_image_tag mission.photo.key%>
-                    <% end %>
-                    <div class="card-infos">
-                      <div>
-                        <h1><%= mission.title  %></h1>
-                        <p><%= mission.description %></p>
-                      </div>
-                    </div>
-                  </div>
+              <div class="card">
+                <% if mission.photo.attached? %>
+                  <%= cl_image_tag mission.photo.key%>
+                <% end %>
+                <div class="card-infos">
                   <div>
-                    <%= link_to favorites_path(mission), data: {turbo_method: :post, action:"click->swipe#dismiss"} do %>
-                        <i class="fa-solid fa-heart fs-1"></i>
-                    <% end %>
+                    <h1><%= mission.title  %></h1>
+                    <p><%= mission.description %></p>
                   </div>
                 </div>
-              <% end %>
+              </div>
+              <div>
+                <%= link_to favorites_path(mission), data: {turbo_method: :post, action:"click->swipe#dismiss"} do %>
+                    <i class="fa-solid fa-heart fs-1"></i>
+                <% end %>
+              </div>
             </div>
+          <% end %>
+        </div>
 
-          <div class="dashboard-button">
-            <%= link_to "J'accède à ma sélection", dashboard_path, class:"btn my-5"%>
-          </div>
+        <div class="dashboard-button">
+          <%= link_to "J'accède à ma sélection", dashboard_path, class:"btn my-5"%>
+        </div>
       </div>
 
     </div>
