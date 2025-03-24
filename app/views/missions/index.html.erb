@@ -1,7 +1,8 @@
 <div class="swipe">
   <div class="container mx-0 ps-0">
     <div class="d-flex">
-      <div class="swipe-form" data-controller="form-expand">
+
+      <div class="swipe-form me-0" data-controller="form-expand">
         <%= form_with model: @mission, url: missions_path, method: :get, class: "d-flex flex-column py-3" do |form| %>
 
           <div class="select-field" data-form-expand-target="selectField">
@@ -13,54 +14,53 @@
           <div class="select-field" data-form-expand-target="selectField">
             <%= form.collection_select :category, Mission.select(:category).distinct, :category, :category,
                 { prompt: "Sélectionnez une catégorie" },
-                { class: "form-control", data: { action: "click->form-expand#expand blur->form-expand#collapse" } } %>
+                { class: "form-control", data: { action: "click->form-expand#expand blur->form-expand#collapse" } }%>
           </div>
 
-          <div class="select-field" data-form-expand-target="selectField">
-            <%= form.select :start_date, options_for_select(Mission.pluck(:start_date).uniq.map { |date| [date.strftime("%d/%m/%Y"), date] }, params.dig(:mission, :début)),
-                { prompt: "Sélectionnez une date" },
-                { class: "form-control", data: { action: "click->form-expand#expand blur->form-expand#collapse" } } %>
+          <div class="select-field" data-form-expand-target="selectField" >
+            <%= form.text_field :start_date,
+                class: "form-control",
+                data: {controller: "datepicker", action: "click->form-expand#expand blur->form-expand#collapse"},
+                placeholder: "Sélectionnez une date" %>
           </div>
 
           <%= form.submit "Rechercher", class: "btn my-5" %>
         <% end %>
       </div>
 
+      <div class="central-elements">
+            <div class="swipe-card d-flex position-relative card-list-container">
+              <% @missions.each do |mission|%>
+                <div class="d-flex align-items-center position-absolute gap-3" data-controller="swipe">
+                  <div class="pointer" data-action="click->swipe#dismiss">
+                    <i class="fa-solid fa-circle-xmark fs-1 "></i>
+                  </div>
 
-      <div class="swipe-card d-flex flex-column" >
-        <div class="position-relative card-list-container">
-          <% @missions.each do |mission|%>
-            <div class="d-flex align-items-center position-absolute gap-3" data-controller="swipe">
-              <div class="pointer" data-action="click->swipe#dismiss">
-                <i class="fa-solid fa-circle-xmark fs-1 "></i>
-              </div>
-
-              <div class="card">
-                <% if mission.photo.attached? %>
-                  <%= cl_image_tag mission.photo.key%>
-                <% end %>
-                <div class="card-infos">
+                  <div class="card">
+                    <% if mission.photo.attached? %>
+                      <%= cl_image_tag mission.photo.key%>
+                    <% end %>
+                    <div class="card-infos">
+                      <div>
+                        <h1><%= mission.title  %></h1>
+                        <p><%= mission.description %></p>
+                      </div>
+                    </div>
+                  </div>
                   <div>
-                    <h1><%= mission.title  %></h1>
-                    <p><%= mission.description %></p>
+                    <%= link_to favorites_path(mission), data: {turbo_method: :post, action:"click->swipe#dismiss"} do %>
+                        <i class="fa-solid fa-heart fs-1"></i>
+                    <% end %>
                   </div>
                 </div>
-              </div>
-              <div>
-                <%= link_to favorites_path(mission), data: {turbo_method: :post, action:"click->swipe#dismiss"} do %>
-                    <i class="fa-solid fa-heart fs-1"></i>
-                <% end %>
-              </div>
+              <% end %>
             </div>
-          <% end %>
-        </div>
 
+          <div class="dashboard-button">
+            <%= link_to "J'accède à ma sélection", dashboard_path, class:"btn my-5"%>
+          </div>
       </div>
 
-      <div class="d-flex justify-content-center align-items-end w-100 my-4 py-6">
-        <%= link_to "J'accède à ma sélection", dashboard_path, class:"btn"%>
-      </div>
     </div>
-
   </div>
 </div>

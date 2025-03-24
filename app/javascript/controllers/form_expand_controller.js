@@ -14,10 +14,10 @@ export default class extends Controller {
       event.currentTarget.style.marginBottom = `${size*29}px`
     }
     else {
+      // si ce n'est pas 0 la liste est déroulée
+      // on lui attribut margin-bottom 0
       event.currentTarget.style.marginBottom = ""
     }
-    // si ce n'est pas 0 la liste est déroulée
-    // on lui attribut margin-bottom 0
   }
 
   collapse(event) {
