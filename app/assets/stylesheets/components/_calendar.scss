@@ -15,8 +15,8 @@
 
   .start-date {}
 
-  .prev-month {}
-  .next-month {}
+  .prev-month {background: rgba(0, 0, 0, 0.1);}
+  .next-month {background-color: #31373f;}
   .current-month {}
 
   .has-events {}
@@ -29,6 +29,11 @@
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
   font-family: "Bowlby One SC", sans-serif;
+
+
+.table {
+  border: none !important;
+}
 
   .calendar-heading {
     display: flex;
@@ -58,6 +63,12 @@
     width: 100%;
     border-collapse: collapse;
     background-color: #121A25;
+    border: none;
+
+
+  thead, tr{
+    border: none;
+  }
 
     thead th {
       color: #5B6C50;
@@ -66,6 +77,7 @@
       text-transform: uppercase;
       font-size: 13px;
       background-color: #121A25;
+      border: none;
     }
 
     tbody td {
@@ -94,18 +106,24 @@
   }
 
   .past {
-    opacity: 0.5;
+    opacity: 0.2;
   }
 
   .future {
-    opacity: 0.9;
+    opacity: 1;
   }
 
-  .start-date {
-    border: 2px solid #90A87E;
+  .future.next-month {
+    background-color: #31373f;
   }
+
+  .past.prev-month {
+    border: none;
+  }
+
 
   .has-events {
-    border: 2px solid white;
+    font-weight: bold;
+    background-color: gold;
   }
 }
