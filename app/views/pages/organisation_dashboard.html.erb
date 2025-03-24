@@ -1,4 +1,4 @@
-<h1> Mes participations en attente</h1>
+<h1> Mes participations en attente de validation</h1>
 <% @missions.each_with_index do |mission, index| %>
   <% if @participations_per_mission[index].any? %>
     <%= mission.title %>

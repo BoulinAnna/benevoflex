@@ -7,7 +7,8 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    @favorite = Favorite.find(params[:id])
+    @favorite = current_user.favorites.find(params[:id])
     @favorite.destroy
-    redirect
+    redirect_to dashboard_path, notice: "Mission retiré de vos favoris"
+  end
 end
