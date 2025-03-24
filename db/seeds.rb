@@ -52,6 +52,9 @@ content_type: "image/jpg"
 )
 solidarite_partagee.save
 
+
+
+
 # modèle : Organisation.create!(name: "", description: "", photo_url: "")
 # 3 organisations : "Cœurs Solidaires", "Main dans la Main", "Solidarité Partagée"
 puts "Finished!"
@@ -166,6 +169,107 @@ filename: "1couture.jpg",
 content_type: "image/jpg"
 )
 couture.save
+
+# ajout de 10 missions:
+atelier_reparation_velo = Mission.create!(title: "Atelier réparation vélo",
+  description: "Les bénévoles aident à réparer des vélos pour les personnes dans le besoin et sensibilisent à l'entretien et à la mobilité douce.",
+  category: "Environnement et écologie", start_date: Date.new(2025, 07, 15), end_date: Date.new(2025, 07, 15), address: "Paris", organisation: solidarite_partagee)
+atelier_reparation_velo.photo.attach(
+  io: File.open(Rails.root.join("db/missions/atelier_reparation_velo.jpg")),
+  filename: "atelier_reparation_velo.jpg",
+  content_type: "image/jpg"
+)
+atelier_reparation_velo.save
+
+festival_zero_dechet = Mission.create!(title: "Festival zéro déchet",
+  description: "Cette mission consiste à organiser un événement sur le thème du zéro déchet, avec des stands, animations et ateliers.",
+  category: "Environnement et écologie", start_date: Date.new(2025, 11, 2), end_date: Date.new(2025, 11, 4), address: "Marseille", organisation: main_dans_la_main)
+festival_zero_dechet.photo.attach(
+  io: File.open(Rails.root.join("db/missions/festival_zero_dechet.jpg")),
+  filename: "festival_zero_dechet.jpg",
+  content_type: "image/jpg"
+)
+festival_zero_dechet.save
+
+sensibilisation_biodiversite = Mission.create!(title: "Sensibilisation à la biodiversité",
+  description: "Les participants animent des ateliers et des jeux pour faire découvrir la biodiversité locale aux enfants et familles.",
+  category: "Environnement et écologie", start_date: Date.new(2025, 4, 12), end_date: Date.new(2025, 4, 13), address: "Lille", organisation: coeurs_solidaires)
+sensibilisation_biodiversite.photo.attach(
+  io: File.open(Rails.root.join("db/missions/sensibilisation_biodiversite.jpg")),
+  filename: "sensibilisation_biodiversite.jpg",
+  content_type: "image/jpg"
+)
+sensibilisation_biodiversite.save
+
+aide_aux_devoirs_college = Mission.create!(title: "Aide aux devoirs – collège",
+  description: "Les bénévoles accompagnent les collégiens dans leurs devoirs et les aident à acquérir des méthodes de travail efficaces.",
+  category: "Soutien scolaire", start_date: Date.new(2025, 07, 15), end_date: Date.new(2025, 07, 15), address: "Paris", organisation: solidarite_partagee)
+aide_aux_devoirs_college.photo.attach(
+  io: File.open(Rails.root.join("db/missions/aide_aux_devoirs_college.jpg")),
+  filename: "aide_aux_devoirs_college.jpg",
+  content_type: "image/jpg"
+)
+aide_aux_devoirs_college.save
+
+initiation_informatique = Mission.create!(title: "Initiation à l'informatique",
+  description: "Cette mission consiste à initier des personnes âgées à l'utilisation de l'ordinateur, d'internet et des outils numériques.",
+  category: "Soutien scolaire", start_date: Date.new(2025, 11, 2), end_date: Date.new(2025, 11, 4), address: "Marseille", organisation: main_dans_la_main)
+initiation_informatique.photo.attach(
+  io: File.open(Rails.root.join("db/missions/initiation_informatique.jpg")),
+  filename: "initiation_informatique.jpg",
+  content_type: "image/jpg"
+)
+initiation_informatique.save
+
+lecture_pour_tous = Mission.create!(title: "Lecture pour tous",
+  description: "Les bénévoles lisent des histoires à des enfants dans les bibliothèques, écoles ou centres sociaux pour encourager la lecture.",
+  category: "Soutien scolaire", start_date: Date.new(2025, 4, 12), end_date: Date.new(2025, 4, 13), address: "Lille", organisation: coeurs_solidaires)
+lecture_pour_tous.photo.attach(
+  io: File.open(Rails.root.join("db/missions/lecture_pour_tous.jpg")),
+  filename: "lecture_pour_tous.jpg",
+  content_type: "image/jpg"
+)
+lecture_pour_tous.save
+
+collecte_jouets = Mission.create!(title: "Collecte solidaire de jouets",
+  description: "Organisation d'une collecte de jouets neufs ou en bon état à redistribuer à Noël à des enfants issus de familles défavorisées.",
+  category: "Collecte et distribution", start_date: Date.new(2025, 07, 15), end_date: Date.new(2025, 07, 15), address: "Paris", organisation: solidarite_partagee)
+collecte_jouets.photo.attach(
+  io: File.open(Rails.root.join("db/missions/collecte_jouets.jpg")),
+  filename: "collecte_jouets.jpg",
+  content_type: "image/jpg"
+)
+collecte_jouets.save
+
+jardin_partage = Mission.create!(title: "Jardin partagé",
+  description: "Aménagement et entretien d’un jardin partagé au cœur d’un quartier : plantations, désherbage, récoltes, animations avec les enfants.",
+  category: "Environnement et écologie", start_date: Date.new(2025, 11, 2), end_date: Date.new(2025, 11, 4), address: "Marseille", organisation: main_dans_la_main)
+jardin_partage.photo.attach(
+  io: File.open(Rails.root.join("db/missions/jardin_partage.jpg")),
+  filename: "jardin_partage.jpg",
+  content_type: "image/jpg"
+)
+jardin_partage.save
+
+distribution_repas = Mission.create!(title: "Distribution de repas chauds",
+  description: "Préparation et distribution de repas chauds aux personnes sans domicile, en collaboration avec une association locale.",
+  category: "Collecte et distribution", start_date: Date.new(2025, 4, 12), end_date: Date.new(2025, 4, 13), address: "Lille", organisation: coeurs_solidaires)
+distribution_repas.photo.attach(
+  io: File.open(Rails.root.join("db/missions/distribution_repas.jpg")),
+  filename: "distribution_repas.jpg",
+  content_type: "image/jpg"
+)
+distribution_repas.save
+
+atelier_theatre = Mission.create!(title: "Atelier théâtre intergénérationnel",
+  description: "Animation d’un atelier théâtre réunissant enfants et personnes âgées autour d’exercices d’expression, de mémoire et de mise en scène.",
+  category: "Animation culturelle", start_date: Date.new(2025, 07, 15), end_date: Date.new(2025, 07, 15), address: "Paris", organisation: solidarite_partagee)
+atelier_theatre.photo.attach(
+  io: File.open(Rails.root.join("db/missions/atelier_theatre.jpg")),
+  filename: "atelier_theatre",
+  content_type: "image/jpg"
+)
+atelier_theatre.save
 
 # modèle : Mission.create!(title: "", description: "", category: "", start_date: "", end_date: "", address: "", organisation_id:, photo_url: "")
 # 4 catégories : "Collecte et distribution", "Environnement et écologie", "Soutien scolaire", "Animation culturelle"
