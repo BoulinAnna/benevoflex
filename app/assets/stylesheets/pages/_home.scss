@@ -81,7 +81,7 @@
   transition: all 0.3s ease-in-out;
   text-decoration: none;
   margin-block-end: 10px;
-  letter-spacing: 1px;
+  letter-spacing: 1.20px;
 
   &:hover {
     background: darken($navy, 10%);
@@ -93,7 +93,7 @@
   display: flex;
   justify-content: space-between; // Espace uniforme entre les icônes
   align-items: center;
-  margin-top: 50px; // Ajuste l’espace au-dessus
+  margin-top: 86px; // Ajuste l’espace au-dessus
   padding: 0 50px; // Ajoute un padding pour éviter que les pictos collent au bord
   gap: 30px; // Espacement entre les éléments
 }
@@ -110,7 +110,7 @@
 }
 
 .feature h3 {
-  font-family: "Bowlby One SC", sans-serif;
+  font-family: "Oxygen";
   font-size: 19px;
   font-weight: 300;
   color: #CED3CA;

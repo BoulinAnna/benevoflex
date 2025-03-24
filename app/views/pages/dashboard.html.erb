@@ -1,13 +1,12 @@
 <div class="dashboard-container">
-  <div class="row justify-content-center">
+  <div class="row justify-content-center w-100">
 
-
-    <div class="col-md-1">
+    <div class="col-md-4">
       <div class="selection-container">
         <h2 class="selection-title">Ma sélection</h2>
-         <div class="missions-container">
+        <div class="missions-container d-flex flex-wrap justify-content-center">
           <% @favorites.each do |favorite| %>
-            <div class="card mission-card">
+            <div class="card mission-card mx-2 my-2">
               <div class="mission-card-content">
                 <% if favorite.mission.photo.attached? %>
                   <%= link_to mission_path(favorite.mission) do %>
@@ -24,36 +23,48 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <h2>Missions en attente de validation</h2>
-  <% @pending_missions.each do |mission| %>
-    <div class="card">
-      <% if mission.photo.attached? %>
-          <%= cl_image_tag mission.photo.key%>
-      <% end %>
-      <div class="card-infos">
-        <div>
-          <h1><%= mission.title  %></h1>
-          <p><%= mission.description %></p>
+
+    <div class="col-md-4">
+      <div class="selection-container-2">
+        <h2 class="selection-title text-center">Missions en attente de validation</h2>
+        <div class="missions-container d-flex flex-wrap justify-content-center">
+          <% @pending_missions.each do |mission| %>
+            <div class="card mission-card mx-2 my-2">
+              <div class="mission-card-content">
+                <% if mission.photo.attached? %>
+                  <%= cl_image_tag mission.photo.key, class: "mission-image" %>
+                <% end %>
+              </div>
+              <div class="card-body">
+                <h3 class="mission-title"><%= mission.title %></h3>
+                <p class="mission-description"><%= mission.description.truncate(80) %></p>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
-  <% end %>
 
 
-<h3>Calendrier + liste des missions validées</h3>
-<% @accepted_missions.each do |mission| %>
-  <div class="card">
-    <% if mission.photo.attached? %>
-        <%= cl_image_tag mission.photo.key%>
-    <% end %>
-    <div class="card-infos">
-      <div>
-        <h1><%= mission.title  %></h1>
-        <p><%= mission.description %></p>
+    <div class="col-md-4">
+      <div class="selection-container-3">
+        <%= month_calendar do |date| %>
+            <%= date.day %>
+          <% end %>
+        <% @accepted_missions.each do |mission| %>
+          <div class="card mission-card mx-2 my-2">
+            <% if mission.photo.attached? %>
+              <%= cl_image_tag mission.photo.key, class: "mission-image" %>
+            <% end %>
+            <div class="card-body">
+              <h3 class="mission-title"><%= mission.title %></h3>
+              <p class="mission-description"><%= mission.description.truncate(80) %></p>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
+
   </div>
-<% end %>
 </div>
