@@ -5,4 +5,9 @@ class FavoritesController < ApplicationController
     @favorite.mission = Mission.find(params[:format].to_i)
     @favorite.save!
   end
+
+  def destroy
+    @favorite = Favorite.find(params[:id])
+    @favorite.destroy
+    redirect
 end
