@@ -1,4 +1,4 @@
-.simple-calendar { 
+.simple-calendar {
   .day {}
 
   .wday-0 {}
@@ -15,9 +15,115 @@
 
   .start-date {}
 
-  .prev-month {}
-  .next-month {}
+  .prev-month {background: rgba(0, 0, 0, 0.1);}
+  .next-month {background-color: #31373f;}
   .current-month {}
 
   .has-events {}
+}
+
+.simple-calendar {
+  background-color: #121A25;
+  color: #5B6C50;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-family: "Bowlby One SC", sans-serif;
+
+
+.table {
+  border: none !important;
+}
+
+  .calendar-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+    .calendar-title {
+      color: #90A87E;
+      font-size: 20px;
+      text-align: left;
+    }
+
+    nav a {
+      color: #5B6C50;
+      margin-left: 10px;
+      font-weight: bold;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #121A25;
+    border: none;
+
+
+  thead, tr{
+    border: none;
+  }
+
+    thead th {
+      color: #5B6C50;
+      font-weight: bold;
+      padding: 10px 0;
+      text-transform: uppercase;
+      font-size: 13px;
+      background-color: #121A25;
+      border: none;
+    }
+
+    tbody td {
+      text-align: center;
+      vertical-align: middle;
+      padding: 12px 0;
+      color: #5B6C50;
+      font-size: 14px;
+      background-color: #121A25;
+      transition: background-color 0.3s;
+      border: 1px solid transparent;
+      cursor: pointer;
+
+      &:hover {
+        background-color: gold;
+        color: #5B6C50;
+      }
+    }
+  }
+
+  .today {
+    background-color: #5B6C50;
+    color: #5B6C50 !important;
+    box-shadow: 0 0 8px #5B6C50;
+    font-weight: bold;
+  }
+
+  .past {
+    opacity: 0.2;
+  }
+
+  .future {
+    opacity: 1;
+  }
+
+  .future.next-month {
+    background-color: #31373f;
+  }
+
+  .past.prev-month {
+    border: none;
+  }
+
+
+  .has-events {
+    font-weight: bold;
+    background-color: gold;
+  }
 }
