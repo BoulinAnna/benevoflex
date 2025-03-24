@@ -19,7 +19,7 @@
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
           </a>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Toutes les associations", "#", class: "dropdown-item" %>
+              <%= link_to "Espace associations", organisation_dashboard_path, class: "dropdown-item" %>
               <%= link_to "Toutes les missions", missions_path, class: "dropdown-item" %>
               <%= link_to "Quitter ma session", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>

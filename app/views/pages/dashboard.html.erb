@@ -16,7 +16,7 @@
               </div>
               <div class="card-body">
                 <h3 class="mission-title"><%= favorite.mission.title  %></h3>
-                <p class="mission-description"><%= favorite.mission.description.truncate(80) %></p>
+                <!--<p class="mission-description"><%= favorite.mission.description.truncate(80) %></p>-->
               </div>
             </div>
           <% end %>
@@ -38,7 +38,7 @@
               </div>
               <div class="card-body">
                 <h3 class="mission-title"><%= mission.title %></h3>
-                <p class="mission-description"><%= mission.description.truncate(80) %></p>
+                <!--<p class="mission-description"><%= mission.description.truncate(80) %></p>-->
               </div>
             </div>
           <% end %>
@@ -49,7 +49,11 @@
 
     <div class="col-md-4">
       <div class="selection-container-3">
-        <%= month_calendar do |date| %>
+        <%= month_calendar(events: @accepted_missions, attribute: :start_date, end_attribute: :end_date) do |date, missions| %>
+         <% missions.each do |mission| %>
+          <div class="event-day" title= "<%= mission.title %>" >
+        </div>
+        <% end %>
             <%= date.day %>
           <% end %>
         <% @accepted_missions.each do |mission| %>
@@ -59,7 +63,7 @@
             <% end %>
             <div class="card-body">
               <h3 class="mission-title"><%= mission.title %></h3>
-              <p class="mission-description"><%= mission.description.truncate(80) %></p>
+              <!--<p class="mission-description"><%= mission.description.truncate(80) %></p>-->
             </div>
           </div>
         <% end %>
