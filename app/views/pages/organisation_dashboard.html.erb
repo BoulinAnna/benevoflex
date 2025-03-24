@@ -28,3 +28,17 @@
     </div>
   </div>
 <% end %>
+
+
+<h2>Créer une mission</h2>
+
+<%= simple_form_for @mission, url: missions_path, html: { multipart: true } do |f| %>
+  <%= f.input :title, label: "Titre de la mission" %>
+  <%= f.input :description, label: "Description" %>
+  <%= f.input :category, collection: Mission::CATEGORIES, prompt: "Sélectionnez une catégorie", label: "Catégorie" %>
+  <%= f.input :address, label: "Adresse / Lieu" %>
+  <%= f.input :start_date, as: :date, label: "Date de début" %>
+  <%= f.input :end_date, as: :date, label: "Date de fin" %>
+  <%= f.input :photo, as: :file, label: "Image de la mission" %>
+  <%= f.button :submit, "Créer la mission", class: "btn btn-primary" %>
+<% end %>
