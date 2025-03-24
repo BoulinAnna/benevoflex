@@ -261,7 +261,7 @@ distribution_repas.photo.attach(
 )
 distribution_repas.save
 
-atelier_theatre = Mission.create!(title: "Atelier théâtre intergénérationnel",
+atelier_theatre = Mission.create!(title: "Atelier théâtre",
   description: "Animation d’un atelier théâtre réunissant enfants et personnes âgées autour d’exercices d’expression, de mémoire et de mise en scène.",
   category: "Animation culturelle", start_date: Date.new(2025, 07, 15), end_date: Date.new(2025, 07, 15), address: "Paris", organisation: solidarite_partagee)
 atelier_theatre.photo.attach(
