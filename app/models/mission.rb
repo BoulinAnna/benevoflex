@@ -11,4 +11,12 @@ class Mission < ApplicationRecord
   validates :start_date, presence: true
   validates :end_date, presence: true
   validates :address, presence: true
+
+  CATEGORIES = [
+    "Collecte et distribution",
+    "Environnement et écologie",
+    "Soutien scolaire",
+    "Animation culturelle"
+  ]
+  
 end

@@ -1,30 +1,83 @@
-<h1> Mes participations en attente</h1>
-<% @missions.each_with_index do |mission, index| %>
-  <% if @participations_per_mission[index].any? %>
-    <%= mission.title %>
-    <% @participations_per_mission[index].each do |participation| %>
-      <li>
-        <%= participation.user.username %>
-        <%= button_to "accepter", accept_participation_path(participation), method: :patch, class:"btn btn-sm" %>
-        or
-        <%= button_to "refuser",  reject_participation_path(participation), method: :patch, class:"btn btn-sm" %>
-      </li>
+<!-- Section 1 : Participations en attente -->
+<section class="container my-5">
+  <h1>Mes participations en attente de validation</h1>
+  <% @missions.each_with_index do |mission, index| %>
+    <% if @participations_per_mission[index].any? %>
+      <div class="mission-card">
+        <h3><%= mission.title %></h3>
+
+        <ul>
+          <% @participations_per_mission[index].each do |participation| %>
+            <li>
+              <%= participation.user.username %>
+              <%= button_to "Accepter", accept_participation_path(participation), method: :patch, class: "btn btn-sm btn-success" %>
+              <%= button_to "Refuser", reject_participation_path(participation), method: :patch, class: "btn btn-sm btn-danger" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     <% end %>
   <% end %>
-<% end %>
+</section>
 
-
-<h1>Mes missions mises à disposition</h1>
-<% @missions.each do |mission| %>
-  <div class="card">
-    <% if mission.photo.attached? %>
-        <%= link_to cl_image_tag(mission.photo.key), mission_path(mission)%>
+<!-- Section 2 : Missions mises à disposition -->
+<section class="container my-5">
+  <h1>Mes missions mises à disposition</h1>
+  <% @missions.each do |mission| %>
+    <div class="mission-card">
+      <% if mission.photo.attached? %>
+        <%= link_to cl_image_tag(mission.photo.key), mission_path(mission) %>
       <% end %>
-    <div class="card-infos">
-      <div>
-        <h1><%= mission.title  %></h1>
+
+      <div class="card-infos">
+        <h3><%= mission.title %></h3>
         <p><%= mission.description %></p>
       </div>
     </div>
+  <% end %>
+</section>
+
+<!-- Section 3 : Formulaire pour créer une mission -->
+<section class="container my-5">
+  <h2>Créer une nouvelle mission</h2>
+<%= simple_form_for @mission, url: missions_path, html: { multipart: true, class: 'mission-form' } do |f| %>
+  <div class="form-group">
+    <%= f.input :title, label: "Titre de la mission", class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :description, label: "Description", class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :category, collection: Mission::CATEGORIES, prompt: "Sélectionnez une catégorie", label: "Catégorie", class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :address, label: "Adresse / Lieu", class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :start_date, as: :date, label: "Date de début", class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :end_date, as: :date, label: "Date de fin", class: 'form-control' %>
+  </div>
+
+  <!-- Sélection de l'organisation -->
+  <div class="form-group">
+    <%= f.input :organisation_id, collection: current_user.organisations, label_method: :name, value_method: :id, prompt: "Choisir une organisation", class: 'form-control' %>
+
+  </div>
+
+  <div class="form-group">
+    <%= f.input :photo, as: :file, label: "Image de la mission", class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.button :submit, "Créer la mission", class: "btn btn-primary" %>
   </div>
 <% end %>
+
+</section>

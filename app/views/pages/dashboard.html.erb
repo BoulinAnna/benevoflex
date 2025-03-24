@@ -6,7 +6,12 @@
         <h2 class="selection-title">Ma sélection</h2>
         <div class="missions-container d-flex flex-wrap justify-content-center">
           <% @favorites.each do |favorite| %>
-            <div class="card mission-card mx-2 my-2">
+            <div class="card mission-card mx-2 my-2 position-relative">
+              <!-- Bouton destroy avec croix en haut à droite -->
+              <%= link_to favorite_path(favorite), method: :delete, data: { turbo_method: :delete, confirm: "Supprimer ?" }, class: "delete-favorite-btn" do %>
+                <i class="fa-solid fa-circle-xmark"></i>
+              <% end %>
+
               <div class="mission-card-content">
                 <% if favorite.mission.photo.attached? %>
                   <%= link_to mission_path(favorite.mission) do %>
@@ -14,9 +19,15 @@
                   <% end %>
                 <% end %>
               </div>
+
               <div class="card-body">
+<<<<<<< HEAD
+                <h3 class="mission-title"><%= favorite.mission.title %></h3>
+                <p class="mission-description"><%= favorite.mission.description.truncate(80) %></p>
+=======
                 <h3 class="mission-title"><%= favorite.mission.title  %></h3>
                 <!--<p class="mission-description"><%= favorite.mission.description.truncate(80) %></p>-->
+>>>>>>> master
               </div>
             </div>
           <% end %>

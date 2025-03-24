@@ -126,6 +126,19 @@ body, html {
   color: #555;
 }
 
+.delete-favorite-btn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: white;
+  font-size: 18px;
+  z-index: 10;
+
+  &:hover {
+    color: red;
+    transform: scale(1.1);
+  }}
+
 .event-day {
   position: relative;
   top: 0;

@@ -16,6 +16,7 @@ class PagesController < ApplicationController
     @participations_per_mission = @missions.map do |mission|
       mission.participations.where(status: "pending")
     end
+    @mission = Mission.new
   end
 
   private
