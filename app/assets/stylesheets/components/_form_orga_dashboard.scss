@@ -1,0 +1,49 @@
+.section-title {
+  font-family: "Bowlby One SC";
+  color: $sable;
+  font-size: 20px;
+  letter-spacing: 1.17px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.mission-form {
+  background-color: $navy;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-input {
+  color: $sable !important;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-family: "Oxygen";
+}
+
+
+
+
+
+.form-button-mission:hover {
+  background-color: black; /* Lighter hover effect */
+}
+
+.form-group {
+  color: $sable;
+  font-family: "Oxygen";
+  padding: 5px 27px;
+}
+
+.form-button-mission {
+  font-family: "Bowlby One SC";
+  color: $sable;
+  border-radius: 8px;
+  padding: 12px 20px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0px 2px 10px rgba(98, 98, 98, 0.1);
+  letter-spacing: 1.17px;
+}
