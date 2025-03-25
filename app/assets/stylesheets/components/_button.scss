@@ -1,8 +1,8 @@
 .btn {
-  color: $sable;
+  color: $sable !important;
   padding: 8px 8px;
   border-radius: 4px;
-  background: #121A25;
+  background: $navy !important;
   transition: background 0.3s ease;
   font-family: "Bowlby One SC";
   letter-spacing: 1.17px;
