@@ -6,6 +6,11 @@ class ParticipationsController < ApplicationController
     @participation.mission = @mission
     @participation.user = current_user
     @participation.status = "pending"
+    if Favorite.exists?(user: current_user, mission: @mission)
+      favorite = current_user.favorites.find_by(mission: @mission)
+      favorite.destroy
+    # current_user.favorites.find_by(mission: @mission).destroy if current_user.favorites.exists?(mission: @mission)
+    end
     if @participation.save
       redirect_to dashboard_path
     else
