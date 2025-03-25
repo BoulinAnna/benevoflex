@@ -11,7 +11,7 @@ export default class extends Controller {
     if (mb == "") {
       // on doit calculer la taille du margin-bottom
       const size = event.currentTarget.children.length
-      event.currentTarget.style.marginBottom = `${size*29}px`
+      event.currentTarget.style.marginBottom = `${size*30}px`
     }
     else {
       // si ce n'est pas 0 la liste est déroulée
