@@ -17,7 +17,7 @@ body, html {
 .selection-container {
   background-color: #121A25;
   border-radius: 12px;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   text-align: center;
   letter-spacing: 1.17px;
@@ -26,28 +26,27 @@ body, html {
 
 .selection-title {
   font-family: "Bowlby One SC";
-  margin-bottom: 70px;
-  color: white;
+  color: $sable;
   font-size: 20px;
-  font-weight: bold;
+  letter-spacing: 1.17px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 
 .missions-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 10px;
   justify-content: center;
 }
 
 
 .mission-card {
-
   background-color: white;
-  border-radius: 8px;
+  border-radius: 10px;
   width: 130px;
   height: 200px;
-  text-align: center;
   box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -71,10 +70,13 @@ body, html {
   padding: 10px;
   height: 100% !important;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .mission-title {
-  font-size: 10px;
+  font-size: 11px;
   color: #121A25;
   margin-bottom: 5px;
   font-family: "Bowlby One SC", sans-serif;
@@ -104,7 +106,7 @@ body, html {
 }
 
 .mission-selected-card-content {
-  height: 90px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -150,7 +152,7 @@ body, html {
 }
 
 .selection-container-3 {
-  //background-color: $sable;
+  background-color: $navy;
   border-radius: 12px;
   padding: 20px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
@@ -160,4 +162,9 @@ body, html {
   flex-wrap: wrap;
   gap: 16px;
   justify-content: center;
+}
+
+.message-mission {
+  font-family: "Oxygen";
+  color: $sable;
 }
