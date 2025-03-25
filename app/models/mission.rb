@@ -18,5 +18,5 @@ class Mission < ApplicationRecord
     "Soutien scolaire",
     "Animation culturelle"
   ]
-  
+
 end
