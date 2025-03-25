@@ -57,7 +57,8 @@
       <div class="selection-container-3">
         <%= month_calendar(events: @accepted_missions, attribute: :start_date, end_attribute: :end_date) do |date, missions| %>
          <% missions.each do |mission| %>
-          <div class="event-day" title= "<%= mission.title %>" >
+            <%= link_to mission_path(mission), class: "event-day", title: mission.title do%>
+            <% end %>
         </div>
         <% end %>
             <%= date.day %>

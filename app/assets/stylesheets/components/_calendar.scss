@@ -1,5 +1,5 @@
 .simple-calendar {
-  .day {}
+  .day {height: 50px !important;}
 
   .wday-0 {}
   .wday-1 {}
@@ -125,5 +125,6 @@
   .has-events {
     font-weight: bold;
     background-color: gold;
+    position: relative;
   }
 }
