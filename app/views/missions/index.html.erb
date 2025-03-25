@@ -1,7 +1,6 @@
 <div class="swipe">
   <div class="container mx-0 ps-0">
     <div class="d-flex">
-
       <div class="swipe-form me-0">
         <%= form_with model: @mission, url: missions_path, method: :get, class: "d-flex flex-column py-3" do |form| %>
 
@@ -10,8 +9,7 @@
             <div class="search-dropdown" data-form-expand-target="selectField">
               <%= form.collection_radio_buttons :address, Mission.select(:address).distinct, :address, :address,
                   { },
-                  { class: "d-none" }
-              %>
+                  { class: "d-none" }%>
             </div>
           </div>
 
@@ -20,8 +18,7 @@
             <div class="search-dropdown" data-form-expand-target="selectField">
               <%= form.collection_radio_buttons :category, Mission.select(:category).distinct, :category, :category,
                   { },
-                  { class: "d-none"}
-              %>
+                  { class: "d-none"}%>
             </div>
           </div>
 
@@ -37,6 +34,7 @@
       </div>
 
       <div class="central-elements">
+
         <div class="swipe-card d-flex position-relative card-list-container">
           <% @missions.each do |mission|%>
             <div class="d-flex align-items-center position-absolute gap-3" data-controller="swipe">
@@ -55,9 +53,10 @@
                   </div>
                 </div>
               </div>
+
               <div>
                 <%= link_to favorites_path(mission), data: {turbo_method: :post, action:"click->swipe#dismiss"} do %>
-                    <i class="fa-solid fa-heart fs-1"></i>
+                  <i class="fa-solid fa-heart fs-1"></i>
                 <% end %>
               </div>
             </div>
@@ -68,7 +67,6 @@
           <%= link_to "J'accède à ma sélection", dashboard_path, class:"btn my-5"%>
         </div>
       </div>
-
-
+    </div>
   </div>
 </div>
