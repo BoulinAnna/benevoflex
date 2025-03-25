@@ -2,6 +2,7 @@
   background-color: $kaki;
 }
 
+
 .swipe-form {
   background-color: $sable;
   width: 300px;
@@ -11,11 +12,12 @@
 
 .central-elements {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   margin: auto;
   padding-top: 50px;
   height: 100vh;
+  align-items: baseline;
+  align-content: center;
+  flex-wrap: wrap;
 }
 
 .dashboard-button {
