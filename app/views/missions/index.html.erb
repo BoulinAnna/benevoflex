@@ -1,23 +1,28 @@
 <div class="swipe">
   <div class="container mx-0 ps-0">
     <div class="d-flex">
-
-      <div class="swipe-form me-0" data-controller="form-expand">
+      <div class="swipe-form me-0">
         <%= form_with model: @mission, url: missions_path, method: :get, class: "d-flex flex-column py-3" do |form| %>
 
-          <div class="select-field" data-form-expand-target="selectField">
-            <%= form.collection_select :address, Mission.select(:address).distinct, :address, :address,
-                { prompt: "Sélectionnez une ville" },
-                { class: "form-control", data: { action: "click->form-expand#expand blur->form-expand#collapse" }  } %>
+          <div class="select-field" data-controller="form-expand">
+            <%= form.label "Sélectionnez une adresse", class: "form-control", data: {active: "false", action: "click->form-expand#expand"} %>
+            <div class="search-dropdown" data-form-expand-target="selectField">
+              <%= form.collection_radio_buttons :address, Mission.select(:address).distinct, :address, :address,
+                  { },
+                  { class: "d-none" }%>
+            </div>
           </div>
 
-          <div class="select-field" data-form-expand-target="selectField">
-            <%= form.collection_select :category, Mission.select(:category).distinct, :category, :category,
-                { prompt: "Sélectionnez une catégorie" },
-                { class: "form-control", data: { action: "click->form-expand#expand blur->form-expand#collapse" } }%>
+          <div class="select-field" data-controller="form-expand" >
+            <%= form.label "Sélectionnez une catégorie", class: "form-control", data: {active: "false", action: "click->form-expand#expand"}  %>
+            <div class="search-dropdown" data-form-expand-target="selectField">
+              <%= form.collection_radio_buttons :category, Mission.select(:category).distinct, :category, :category,
+                  { },
+                  { class: "d-none"}%>
+            </div>
           </div>
 
-          <div class="select-field" data-form-expand-target="selectField" >
+          <div class="select-field">
             <%= form.text_field :start_date,
                 class: "form-control",
                 data: {controller: "datepicker", action: "click->form-expand#expand blur->form-expand#collapse"},
@@ -29,6 +34,7 @@
       </div>
 
       <div class="central-elements">
+
         <div class="swipe-card d-flex position-relative card-list-container">
           <% @missions.each do |mission|%>
             <div class="d-flex align-items-center position-absolute gap-3" data-controller="swipe">
@@ -47,9 +53,10 @@
                   </div>
                 </div>
               </div>
+
               <div>
                 <%= link_to favorites_path(mission), data: {turbo_method: :post, action:"click->swipe#dismiss"} do %>
-                    <i class="fa-solid fa-heart fs-1"></i>
+                  <i class="fa-solid fa-heart fs-1"></i>
                 <% end %>
               </div>
             </div>
@@ -60,7 +67,6 @@
           <%= link_to "J'accède à ma sélection", dashboard_path, class:"btn my-5"%>
         </div>
       </div>
-
-
+    </div>
   </div>
 </div>

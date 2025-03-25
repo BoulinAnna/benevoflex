@@ -44,7 +44,9 @@
             <div class="card mission-card mx-2 my-2">
               <div class="mission-card-content">
                 <% if mission.photo.attached? %>
-                  <%= cl_image_tag mission.photo.key, class: "mission-image" %>
+                  <%= link_to mission_path(mission) do %>
+                    <%= cl_image_tag(mission.photo.key, class: "mission-image") %>
+                  <% end %>
                 <% end %>
               </div>
               <div class="card-body">
@@ -75,7 +77,9 @@
         <% @accepted_missions.each do |mission| %>
           <div class="card mission-card mx-2 my-2">
             <% if mission.photo.attached? %>
-              <%= cl_image_tag mission.photo.key, class: "mission-image" %>
+              <%= link_to mission_path(mission) do %>
+                <%= cl_image_tag(mission.photo.key, class: "mission-image") %>
+              <% end %>
             <% end %>
             <div class="card-body">
               <h3 class="mission-title"><%= mission.title %></h3>
