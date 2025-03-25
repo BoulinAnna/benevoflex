@@ -49,3 +49,33 @@
   cursor: pointer;
   color: $navy;
 }
+
+.card-to-right {
+  animation-duration: 1s;
+  animation-name: right-direction;
+}
+
+@keyframes right-direction {
+  from {
+    translate: 0 0;
+  }
+
+  to {
+    translate: 150vw 0;
+  }
+}
+
+.card-to-left {
+  animation-duration: 1s;
+  animation-name: left-direction;
+}
+
+@keyframes left-direction {
+  from {
+    translate: 0 0;
+  }
+
+  to {
+    translate: -150vw 0;
+  }
+}
