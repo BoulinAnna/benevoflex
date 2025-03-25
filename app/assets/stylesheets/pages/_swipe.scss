@@ -2,7 +2,6 @@
   background-color: $kaki;
 }
 
-
 .swipe-form {
   background-color: $sable;
   width: 300px;
@@ -12,12 +11,13 @@
 
 .central-elements {
   display: flex;
-  margin: auto;
+  margin: 15px auto 35px auto;
   padding-top: 50px;
-  height: 100vh;
+  height: 105vh;
   align-items: baseline;
   align-content: center;
   flex-wrap: wrap;
+
 }
 
 .dashboard-button {
@@ -25,5 +25,6 @@
 }
 
 .pointer {
-  cursor: pointer
+  cursor: pointer;
+  color: $navy;
 }

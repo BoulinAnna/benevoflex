@@ -9,7 +9,7 @@ class ParticipationsController < ApplicationController
     if @participation.save
       redirect_to dashboard_path
     else
-      redirect "missions/show", status: :unprocessable_entity
+      render "missions/show", status: :unprocessable_entity
     end
   end
 
