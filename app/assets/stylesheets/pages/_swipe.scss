@@ -9,6 +9,28 @@
   box-shadow: 7px 4px 29px 9px rgba(0, 0, 0, 0.25);
 }
 
+.search-dropdown {
+  height: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  input:checked + label {
+    background-color: $navy;
+    color: $sable;
+  }
+  
+  label {
+    color: $navy;
+  }
+}
+
+.search-dropdown-active {
+  height: fit-content;
+}
+
+
+
 .central-elements {
   display: flex;
   margin: 15px auto 35px auto;
