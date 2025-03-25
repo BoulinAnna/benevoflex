@@ -13,20 +13,23 @@ class MissionsController < ApplicationController
   end
 
   def create
-    @mission = Mission.new(misison_params)
-    @misison.organisation = current_user.organisations.find(params[:mission][:organisation_id])
+    @mission = Mission.new(mission_params)
+    @mission.organisation = current_user.organisations.first
 
     if @mission.save
       redirect_to organisation_dashboard_path, notice: "Mission créée avec succès."
     else
       @missions = current_user.organisations.first.missions
+      @participations_per_mission = @missions.map do |mission|
+        mission.participations.where(status: "pending")
+      end
       render "pages/organisation_dashboard", status: :unprocessable_entity
     end
   end
 
   private
 
-  def misison_params
-    params.require(:mission).permit(:title, :description, :address, :start_date, :end_date, :photo)
+  def mission_params
+    params.require(:mission).permit(:title, :description, :category, :address, :start_date, :end_date, :photo)
   end
 end
