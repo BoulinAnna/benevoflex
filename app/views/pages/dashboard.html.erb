@@ -5,8 +5,9 @@
       <div class="selection-container">
         <h2 class="selection-title">Ma sélection</h2>
         <div class="missions-container d-flex flex-wrap justify-content-center">
-          <% @favorites.each do |favorite| %>
-            <div class="card mission-card mx-2 my-2 position-relative">
+            <% if @favorites.any? %>
+            <% @favorites.each do |favorite| %>
+              <div class="card mission-card mx-2 my-2 position-relative">
               <!-- Bouton destroy avec croix en haut à droite -->
               <%= link_to favorite_path(favorite), method: :delete, data: { turbo_method: :delete, confirm: "Supprimer ?" }, class: "delete-favorite-btn" do %>
                 <i class="fa-solid fa-circle-xmark"></i>
@@ -22,10 +23,13 @@
 
               <div class="card-body">
                 <h3 class="mission-title"><%= favorite.mission.title  %></h3>
-                <!--<p class="mission-description"><%= favorite.mission.description.truncate(80) %></p>-->
               </div>
             </div>
+              <%end%>
+          <%else%>
+            <p class="message-mission">Vous n'avez sélectionné aucune mission</p>
           <% end %>
+
         </div>
       </div>
     </div>
@@ -35,11 +39,14 @@
       <div class="selection-container-2">
         <h2 class="selection-title text-center">Missions en attente de validation</h2>
         <div class="missions-container d-flex flex-wrap justify-content-center">
+          <%if @pending_missions.any? %>
           <% @pending_missions.each do |mission| %>
             <div class="card mission-card mx-2 my-2">
               <div class="mission-card-content">
                 <% if mission.photo.attached? %>
-                  <%= cl_image_tag mission.photo.key, class: "mission-image" %>
+                  <%= link_to mission_path(mission) do %>
+                    <%= cl_image_tag(mission.photo.key, class: "mission-image") %>
+                  <% end %>
                 <% end %>
               </div>
               <div class="card-body">
@@ -47,6 +54,9 @@
                 <!--<p class="mission-description"><%= mission.description.truncate(80) %></p>-->
               </div>
             </div>
+            <% end %>
+          <%else%>
+            <p class="message-mission">Vous n'avez aucune mission en attente de validation</p>
           <% end %>
         </div>
       </div>
@@ -55,9 +65,11 @@
 
     <div class="col-md-4">
       <div class="selection-container-3">
+        <h2 class="selection-title">Mes missions à venir</h2>
         <%= month_calendar(events: @accepted_missions, attribute: :start_date, end_attribute: :end_date) do |date, missions| %>
          <% missions.each do |mission| %>
-          <div class="event-day" title= "<%= mission.title %>" >
+            <%= link_to mission_path(mission), class: "event-day", title: mission.title do%>
+            <% end %>
         </div>
         <% end %>
             <%= date.day %>
@@ -65,7 +77,9 @@
         <% @accepted_missions.each do |mission| %>
           <div class="card mission-card mx-2 my-2">
             <% if mission.photo.attached? %>
-              <%= cl_image_tag mission.photo.key, class: "mission-image" %>
+              <%= link_to mission_path(mission) do %>
+                <%= cl_image_tag(mission.photo.key, class: "mission-image") %>
+              <% end %>
             <% end %>
             <div class="card-body">
               <h3 class="mission-title"><%= mission.title %></h3>

@@ -51,7 +51,7 @@
 .intro-bis{
 
   h2{
-    color: $sable;
+    color: $navy;
     text-align: center;
     font-family: "Bowlby One SC";
     font-size: 37px;
@@ -91,16 +91,17 @@
 
 .features {
   display: flex;
-  justify-content: space-between; // Espace uniforme entre les icônes
+  justify-content: space-around; // Espace uniforme entre les icônes
   align-items: center;
   margin-top: 86px; // Ajuste l’espace au-dessus
-  padding: 0 50px; // Ajoute un padding pour éviter que les pictos collent au bord
+  padding: 0 150px 0 150px; // Ajoute un padding pour éviter que les pictos collent au bord
   gap: 30px; // Espacement entre les éléments
 }
 
 .feature {
   text-align: center;
   max-width: 250px; // Largeur max des blocs
+
 }
 
 .feature i {
@@ -113,7 +114,7 @@
   font-family: "Oxygen";
   font-size: 19px;
   font-weight: 300;
-  color: #CED3CA;
+  color: $sable;
   line-height: 1.3;
   letter-spacing: 1px;
 }
