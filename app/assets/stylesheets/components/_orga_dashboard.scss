@@ -1,0 +1,14 @@
+/* Style pour les boutons avec icônes uniquement */
+.btn i {
+  font-size: 18px; /* Augmenter la taille des icônes */
+  margin-right: 0px; /* Retirer l'espace entre l'icône et le texte */
+}
+
+/* Styles supplémentaires pour les boutons */
+.btn-success, .btn-danger {
+  width: 50px;  /* Ajuste la taille des boutons */
+  height: 50px; /* Ajuste la taille des boutons */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
