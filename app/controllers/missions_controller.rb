@@ -6,7 +6,11 @@ class MissionsController < ApplicationController
   end
 
   def index
-    @missions = Mission.all
+    #@missions = Mission.joins(favorites: :user).where.not(favorites: { user: current_user }).or(Mission.where.not(associated))
+    @missions = Mission
+    .left_joins(:favorites)
+    .or(Mission.where.not(id: Favorite.where(user_id: current_user.id).select(:mission_id)))
+
     @missions = @missions.where(address: params[:address]) if params[:address].present?
     @missions = @missions.where(category: params[:category]) if params[:category].present?
     @missions = @missions.where(start_date: params[:start_date]) if params[:start_date].present?
