@@ -16,8 +16,9 @@
 body {
   display: flex;
   flex-direction: column;
-  min-width: 100vh;
+  min-width: 100vw;
   margin: 0;
+  overflow-x: hidden;
 }
 
 main {
