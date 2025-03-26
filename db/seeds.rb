@@ -21,7 +21,10 @@ User.destroy_all
 
 puts "create a user"
 User_Demo = User.create!(email: "demo@mail.com", username: "demo_guy", password: "123456")
-admin = User.create!(email: "anna@mail.com", password: "123456", username: "Anna", admin: true)
+admin = User.create!(email: "anna@mail.com", password: "123456", username: "Anna", admin: true, photo_url: "Anna.jpg")
+User_Emilie = User.create!(email: "emilie@mail.com", password: "123456", username: "Emilie", photo_url: "Emilie.jpg")
+User_Lea = User.create!(email: "Lea@mail.com", password: "123456", username: "Lea", photo_url: "Lea.jpg")
+User_Nicolas = User.create!(email: "Nicolas@mail.com", password: "123456", username: "Nicolas", photo_url: "Nicolas.jpg")
 
 puts "Creating organisations ..."
 
