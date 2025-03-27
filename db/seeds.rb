@@ -22,9 +22,9 @@ User.destroy_all
 puts "create a user"
 User_Demo = User.create!(email: "demo@mail.com", username: "demo_guy", password: "123456", photo_url: "Avatar.png")
 admin = User.create!(email: "anna@mail.com", password: "123456", username: "Anna", admin: true, photo_url: "Anna.jpg")
-User_Emilie = User.create!(email: "emilie@mail.com", password: "123456", username: "Emilie", photo_url: "Emilie.jpg")
-User_Lea = User.create!(email: "lea@mail.com", password: "123456", username: "Lea", photo_url: "Lea.jpg")
-User_Nicolas = User.create!(email: "nicolas@mail.com", password: "123456", username: "Nicolas", photo_url: "Nicolas.png")
+User_Emilie = User.create!(email: "emilie@mail.com", password: "123456", username: "Emilie", admin: true, photo_url: "Emilie.jpg")
+User_Lea = User.create!(email: "lea@mail.com", password: "123456", username: "Lea", admin: true, photo_url: "Lea.jpg")
+User_Nicolas = User.create!(email: "nicolas@mail.com", password: "123456", username: "Nicolas", admin: true, photo_url: "Nicolas.png")
 
 puts "Creating organisations ..."
 
@@ -66,7 +66,7 @@ puts "Created #{Organisation.count} organisations"
 puts "Creating missions ..."
 
 noel = Mission.create!(title: "Noël pour tous", description: "Noël pour tous consiste à collecter des dons (jouets, vêtements, nourriture) pendant la période des fêtes afin de les distribuer aux familles en difficulté. Les bénévoles participent à l'organisation des collectes, à la gestion des dons et à la distribution pour offrir un Noël solidaire à ceux qui en ont besoin. Un engagement chaleureux et concret pour faire briller l'esprit de Noël chez les plus démunis.",
-category: "Collecte et distribution", start_date: Date.new(2025, 11, 02), end_date: Date.new(2025, 11, 04), address: "Toulouse", organisation: coeurs_solidaires)
+category: "Collecte et distribution", start_date: Date.new(2025, 05, 02), end_date: Date.new(2025, 05, 04), address: "Toulouse", organisation: coeurs_solidaires)
 noel.photo.attach(
 io: File.open(Rails.root.join("db/missions/1noel.jpg")),
 filename: "1noel.jpg",
@@ -102,7 +102,7 @@ content_type: "image/jpg"
 ville.save
 
 berges = Mission.create!(title: "Les berges de Garonne", description: "Les berges de Garonne consiste à organiser des actions de nettoyage et de préservation des berges du fleuve, en ramassant les déchets et en protégeant la faune et la flore locales. Les bénévoles participent à l'entretien des espaces naturels, tout en sensibilisant le public à l'importance de la protection de l'environnement. Un engagement pour préserver la beauté et la biodiversité des berges de Garonne.",
-category: "Environnement et écologie", start_date: Date.new(2025, 07, 15), end_date: Date.new(2025, 07, 15), address: "Toulouse", organisation: main_dans_la_main)
+category: "Environnement et écologie", start_date: Date.new(2025, 04, 06), end_date: Date.new(2025, 04, 06), address: "Toulouse", organisation: main_dans_la_main)
 berges.photo.attach(
 io: File.open(Rails.root.join("db/missions/1berges.jpg")),
 filename: "1berges.jpg",
@@ -147,7 +147,7 @@ content_type: "image/jpg"
 français.save
 
 palettes = Mission.create!(title: "Les petites palettes", description: "Les petites palettes consiste à organiser des ateliers artistiques et créatifs pour les enfants, afin de stimuler leur imagination et leur sensibilité artistique. Les bénévoles encadrent des activités telles que la peinture, la sculpture ou la création de projets collectifs, tout en encourageant l'expression individuelle. Un engagement enrichissant pour favoriser l'épanouissement culturel des jeunes participants.",
-category: "Animation culturelle", start_date: Date.new(2025, 11, 02), end_date: Date.new(2025, 11, 04), address: "Toulouse", organisation: coeurs_solidaires)
+category: "Animation culturelle", start_date: Date.new(2025, 04, 05), end_date: Date.new(2025, 04, 06), address: "Toulouse", organisation: coeurs_solidaires)
 palettes.photo.attach(
 io: File.open(Rails.root.join("db/missions/1palettes.jpg")),
 filename: "1palettes.jpg",

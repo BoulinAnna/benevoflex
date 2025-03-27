@@ -1,7 +1,7 @@
-<div class="swipe">
-  <div class="container mx-0 ps-0">
-    <div class="d-flex">
-      <div class="swipe-form me-0">
+
+
+    <div class="d-flex h-100">
+      <div class="swipe-form">
         <%= form_with model: @mission, url: missions_path, method: :get, class: "d-flex flex-column py-3" do |form| %>
 
           <div class="select-field" data-controller="form-expand">
@@ -35,11 +35,11 @@
 
       <div class="central-elements">
 
-        <div class="swipe-card d-flex position-relative card-list-container">
+        <div class="card-list-container d-flex position-relative ">
           <% @missions.each do |mission|%>
             <div class="d-flex align-items-center position-absolute gap-3" data-controller="swipe">
               <div class="pointer" data-action="click->swipe#dislike">
-                <i class="fa-solid fa-circle-xmark fs-1 "></i>
+                <i class="fa-solid fa-circle-xmark fs-1"></i>
               </div>
 
               <div class="card" data-swipe-target="card">
@@ -64,9 +64,7 @@
         </div>
 
         <div class="dashboard-button">
-          <%= link_to "J'accède à ma sélection", dashboard_path, class:"btn my-5"%>
+          <%= link_to "J'accède à ma sélection", dashboard_path, class:"btn my-3"%>
         </div>
       </div>
     </div>
-  </div>
-</div>
