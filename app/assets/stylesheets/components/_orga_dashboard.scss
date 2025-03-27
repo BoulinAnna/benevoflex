@@ -45,8 +45,8 @@
   }
 
   img {
-    width: 46px;
-    height: 46px;
+    width: 85px;
+    height: 75px;
     border-radius: 12px;
     object-fit: cover;
   }
@@ -66,7 +66,6 @@
   justify-content: space-between; // ← important !
   align-items: center;
   height: 100%;
-  padding: 9px;
 }
 
 .mission-title-orga {
@@ -81,4 +80,14 @@
   letter-spacing: 1.17px;
   color: #121a25;
   font-family: "Bowlby One SC";
+}
+
+.action-buttons-orga i {
+  font-size: 25px;
+  color: white;
+}
+
+.dashboard-page .navbar {
+  border-bottom: 1px solid $kaki;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
 }
