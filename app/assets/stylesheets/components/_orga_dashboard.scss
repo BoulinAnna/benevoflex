@@ -1,49 +1,85 @@
-/* Style pour les boutons avec icônes uniquement */
-.btn i {
-  font-size: 18px; /* Augmenter la taille des icônes */
-  margin-right: 0px; /* Retirer l'espace entre l'icône et le texte */
-}
-
-/* Styles supplémentaires pour les boutons */
-.btn-success, .btn-danger {
-  width: 50px;  /* Ajuste la taille des boutons */
-  height: 50px; /* Ajuste la taille des boutons */
+.dashboard-container-orga {
+  background-color: $navy;
+  padding: 80px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
-.mission-mini-card {
+.selection-container-orga {
+  background-color: $kaki;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  letter-spacing: 1.17px;
+}
+
+
+.selection-title {
+  font-family: "Bowlby One SC";
+  color: $sable;
+  font-size: 20px;
+  letter-spacing: 1.17px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+.mission-mini-card-orga {
   background-color: white;
   border-radius: 10px;
-  width: 130px;
-  height: 200px;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  width: 160px;
+  height: 240px; // plus de place
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 
-  .mini-card {
-    display: flex;
-    width: 637px;
-    height: 550px;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-shrink: 0;
-    border-radius: 15px;
-    border: 2px solid var(--Border-borderOpaque, #E2E2E2);
-    background: var(--Background-backgroundPrimary, #FFF);
-    // box-shadow: 5px 7px 7px 5px rgba(0, 0, 0, 0.09);
-    backdrop-filter: blur(0.5px);
-    margin-top: 6px;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    width: 100%;
   }
-
 
   img {
     width: 46px;
     height: 46px;
-    flex-shrink: 0;
     border-radius: 12px;
-    border: 0px solid #000;
-    // background: url(<path-to-image>) lightgray 1.368px -37.72px / 100% 130.328% no-repeat;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
     object-fit: cover;
   }
+
+}
+
+.participation-line-mission {
+  height: 83%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.content-block {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 9px;
+}
+
+.mission-title-orga {
+  font-size: 15px;
+  color: #121A25;
+  margin-bottom: 5px;
+  font-family: "Bowlby One SC", sans-serif;
+}
+
+.participant-name {
+  margin-top: 5px;
+  letter-spacing: 1.17px;
+  color: #121a25;
+  font-family: "Bowlby One SC";
 }
