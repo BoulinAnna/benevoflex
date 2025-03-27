@@ -18,3 +18,17 @@ font-size: 12px;
 .btn-large {
   width: 620px;
 }
+
+.btn-form {
+  height: 60px;
+  color: $sable !important;
+  padding: 8px 8px;
+  border-radius: 4px;
+  background: $navy !important;
+  transition: background 0.3s ease;
+  font-family: "Bowlby One SC";
+  letter-spacing: 1.17px;
+  font-size: 15px;
+  width: 94%;
+  margin-left: 7px;
+}
