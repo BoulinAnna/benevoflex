@@ -1,41 +1,57 @@
 <!-- Section 1 : Participations en attente -->
-<div class="dashboard-container">
-    <div class="row justify-content-center w-100">
+<div class="dashboard-container-orga">
+    <div class="row justify-content-start w-100">
     <div class="col-md-4">
-      <div class="selection-container">
+      <div class="selection-container-orga">
         <h2 class="selection-title">Mes participations en attente de validation</h2>
+
+
         <div class="missions-container d-flex flex-wrap justify-content-center">
           <% @participations_per_mission.each do |participations| %>
               <% next if participations.empty? %> <!-- si pas de participation on passe a la mission suivante  -->
-              <div class="mission-mini-card  mx-2 my-2 position-relative">
-                <h3 class="mission-title"><%= participations.first.mission.title %></h3>
-                <ul>
-                  <% participations.each do |participation| %>
-                    <li>
-                      <%= participation.user.username %>
-                      <%if participation.user.photo_url?%>
-                      <%= image_tag(participation.user.photo_url) %>
-                      <% end %>
-                      <%= button_to accept_participation_path(participation), method: :patch, class: "btn btn-sm btn-success" do %>
-                      <i class="fas fa-check-circle"></i>
-                      <% end %>
-                      <%= button_to reject_participation_path(participation), method: :patch, class: "btn btn-sm btn-danger" do %>
-                      <i class="fas fa-times-circle"></i>
-                      <% end %>
-                    </li>
-                  <% end %>
-                </ul>
-              </div>
+              <div class="mission-mini-card-orga  mx-2 my-2 position-relative">
+                <h3 class="mission-title-orga"><%= participations.first.mission.title %></h3>
+                <div class="mission-mini-card-orga mx-2 my-2 position-relative d-flex flex-column justify-content-between">
+                  <ul>
+                    <!-- section accept / refuse participation  -->
+                    <% participations.each do |participation| %>
+                      <li class="participation-line-mission text-center">
+                      <div class="content-block">
+                        <div class="participant-info d-flex flex-column align-items-center mb-2">
+                          <div class="d-flex flex-column align-items-center gap-1">
+                            <%if participation.user.photo_url?%>
+                            <%= image_tag(participation.user.photo_url) %>
+                            <span class="participant-name"><%= participation.user.username %></span>
+                            <% end %>
+                          </div>
+                          </div>
 
-          <% end %>
-        </div>
+                        <!-- accept participation  -->
+                        <div class="action-buttons d-flex justify-content-center gap-2 mb-2">
+                        <%= button_to accept_participation_path(participation), method: :patch, class: "btn btn-success" do %>
+                          <i class="fas fa-check-circle"></i>
+                        <% end %>
+
+                        <!-- reject participation  -->
+                        <%= button_to reject_participation_path(participation), method: :patch, class: "btn btn-danger" do %>
+                          <i class="fas fa-times-circle"></i>
+                        <% end %>
+                      </div>
+                    <% end %>
+                  </ul>
+                </div>
+              </div>
+            <% end %>
+          </div>
+
       </div>
     </div>
 
 
+
     <!-- Section 2 : Mes misions mis à disposition -->
     <div class="col-md-4">
-      <div class="selection-container">
+      <div class="selection-container-orga">
         <h2 class="selection-title">Mes missions mises à disposition</h2>
         <div class="missions-container d-flex flex-wrap justify-content-center">
           <% @missions.each do |mission| %>
