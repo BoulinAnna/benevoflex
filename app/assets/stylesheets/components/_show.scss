@@ -1,3 +1,16 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; // Empêche le défilement horizontal
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+
 .background {
   background-color: #CED3CA;
   margin-bottom: 0;
@@ -18,13 +31,13 @@
 }
 
 .full-page-bg {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
   background-color: #5B6C50;
-  width: 100vw;
-  position: relative;
-  left: 0;
-  right: 0;
-  margin: 0;
-  margin-bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 40px;
 }
 
 .second-section {
