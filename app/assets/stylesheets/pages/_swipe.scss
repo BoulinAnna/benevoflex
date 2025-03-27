@@ -5,15 +5,16 @@ body, html {
   height: 100%;
 }
 
-.swipe {
-  background-color: $kaki;
-}
+// .swipe {
+//   background-color: $kaki;
+// }
 
 // ---- form  ----
 .swipe-form {
   background-color: $sable;
   width: 300px;
   box-shadow: 7px 4px 29px 9px rgba(0, 0, 0, 0.25);
+  padding-top: 10px;
 }
 
 .search-dropdown {
@@ -30,11 +31,21 @@ body, html {
   label {
     color: $navy;
   }
+
 }
 
 .search-dropdown-active {
   height: fit-content;
 }
+
+.select-field {
+  height: 60px;
+  border-radius: 4px;
+  width: 94%;
+  margin-left: 7px;
+  margin-bottom: 5px;
+}
+
 
 // ---- Cards + bouton ----
 
@@ -49,10 +60,14 @@ body, html {
 
 .pointer {
   cursor: pointer;
-  color: $navy;
-  font-size: 50px;
-  margin: 0 10px;
 }
+
+.picto {
+  color: $navy;
+  margin: 0 10px;
+  font-size: 50px;
+}
+
 
 
 
