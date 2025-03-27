@@ -2,5 +2,5 @@
 meta_product_name: "Benevoflex"
 meta_title: "Trouvez une mission qui vous correspond, en quelques clics!"
 meta_description: "BenevoFlex simplifie l’engagement bénévole en le rendant rapide, flexible et accessible. Trouvez en un clic une mission qui correspond à vos disponibilités grâce à notre système de matching intelligent. Un engagement sans contrainte pour maximiser l'impact associatif et encourager l’action !"
-meta_image: "cover.jpg" # should exist in `app/assets/images/`
+meta_image: "meta_cover.jpg" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account" # required for Twitter Cards
