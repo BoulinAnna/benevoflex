@@ -1,115 +1,118 @@
 <!-- Section 1 : Participations en attente -->
-<div class="dashboard-container-orga">
-    <div class="row justify-content-start w-100">
-    <div class="col-md-4">
-      <div class="selection-container-orga">
-        <h2 class="selection-title">Mes participations en attente de validation</h2>
+<body class="dashboard-page">
+
+  <div class="dashboard-container-orga">
+      <div class="row justify-content-start w-100">
+      <div class="col-md-4">
+        <div class="selection-container-orga">
+          <h2 class="selection-title">Mes participations en attente de validation</h2>
 
 
-        <div class="missions-container d-flex flex-wrap justify-content-center">
-          <% @participations_per_mission.each do |participations| %>
-              <% next if participations.empty? %> <!-- si pas de participation on passe a la mission suivante  -->
-              <div class="mission-mini-card-orga  mx-2 my-2 position-relative">
-                <h3 class="mission-title-orga"><%= participations.first.mission.title %></h3>
-                <div class="mission-mini-card-orga mx-2 my-2 position-relative d-flex flex-column justify-content-between">
-                  <ul>
-                    <!-- section accept / refuse participation  -->
-                    <% participations.each do |participation| %>
-                      <li class="participation-line-mission text-center">
-                      <div class="content-block">
-                        <div class="participant-info d-flex flex-column align-items-center mb-2">
-                          <div class="d-flex flex-column align-items-center gap-1">
-                            <%if participation.user.photo_url?%>
-                            <%= image_tag(participation.user.photo_url) %>
-                            <span class="participant-name"><%= participation.user.username %></span>
-                            <% end %>
-                          </div>
-                          </div>
+          <div class="missions-container d-flex flex-wrap justify-content-center">
+            <% @participations_per_mission.each do |participations| %>
+                <% next if participations.empty? %> <!-- si pas de participation on passe a la mission suivante  -->
+                <div class="mission-mini-card-orga  mx-2 my-2 position-relative">
+                  <h3 class="mission-title-orga"><%= participations.first.mission.title %></h3>
+                  <div class="mission-mini-card-orga mx-2 my-2 position-relative d-flex flex-column justify-content-between">
+                    <ul>
+                      <!-- section accept / refuse participation  -->
+                      <% participations.each do |participation| %>
+                        <li class="participation-line-mission text-center">
+                        <div class="content-block">
+                          <div class="participant-info d-flex flex-column align-items-center mb-2">
+                            <div class="d-flex flex-column align-items-center gap-1">
+                              <%if participation.user.photo_url?%>
+                              <%= image_tag(participation.user.photo_url) %>
+                              <span class="participant-name"><%= participation.user.username %></span>
+                              <% end %>
+                            </div>
+                            </div>
 
-                        <!-- accept participation  -->
-                        <div class="action-buttons d-flex justify-content-center gap-2 mb-2  mt-auto">
-                        <%= button_to accept_participation_path(participation), method: :patch, class: "btn btn-success" do %>
-                          <i class="fas fa-check-circle"></i>
-                        <% end %>
+                          <!-- accept participation  -->
+                          <div class="action-buttons-orga d-flex justify-content-center gap-3 mb-2  mt-auto">
+                          <%= button_to accept_participation_path(participation), method: :patch, class: "btn btn-success" do %>
+                            <i class="fas fa-check-circle"></i>
+                          <% end %>
 
-                        <!-- reject participation  -->
-                        <%= button_to reject_participation_path(participation), method: :patch, class: "btn btn-danger" do %>
-                          <i class="fas fa-times-circle"></i>
-                        <% end %>
-                      </div>
-                    <% end %>
-                  </ul>
+                          <!-- reject participation  -->
+                          <%= button_to reject_participation_path(participation), method: :patch, class: "btn btn-danger" do %>
+                            <i class="fas fa-times-circle"></i>
+                          <% end %>
+                        </div>
+                      <% end %>
+                    </ul>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+
+        </div>
+      </div>
+
+
+
+      <!-- Section 2 : Mes misions mis à disposition -->
+      <div class="col-md-4">
+        <div class="selection-container-orga">
+          <h2 class="selection-title">Mes missions mises à disposition</h2>
+          <div class="missions-container d-flex flex-wrap justify-content-center">
+            <% @missions.each do |mission| %>
+              <div class="card mission-card mx-2 my-2 position-relative">
+                <% if mission.photo.attached? %>
+                  <%= link_to cl_image_tag(mission.photo.key, class: "mission-image"), mission_path(mission) %>
+                <% end %>
+
+                <div class="card-body">
+                  <h3 class="mission-title"><%= mission.title %></h3>
+                  <!--<p class="mission-description"><%= mission.description %></p> -->
                 </div>
               </div>
             <% end %>
           </div>
-
-      </div>
-    </div>
-
-
-
-    <!-- Section 2 : Mes misions mis à disposition -->
-    <div class="col-md-4">
-      <div class="selection-container-orga">
-        <h2 class="selection-title">Mes missions mises à disposition</h2>
-        <div class="missions-container d-flex flex-wrap justify-content-center">
-          <% @missions.each do |mission| %>
-            <div class="card mission-card mx-2 my-2 position-relative">
-              <% if mission.photo.attached? %>
-                <%= link_to cl_image_tag(mission.photo.key, class: "mission-image"), mission_path(mission) %>
-              <% end %>
-
-              <div class="card-body">
-                <h3 class="mission-title"><%= mission.title %></h3>
-                <!--<p class="mission-description"><%= mission.description %></p> -->
-              </div>
-            </div>
-          <% end %>
         </div>
       </div>
-    </div>
 
 
-    <!-- Section 3 : Formulaire pour créer une mission -->
-    <section class="col-md-4">
-      <%= simple_form_for @mission, url: missions_path, html: { multipart: true, class: 'mission-form' } do |f| %>
-      <h2 class="section-title">Créer une nouvelle mission</h2>
-        <div class="form-group">
-          <%= f.input :title, label: "Titre de la mission", class: 'form-input' %>
-        </div>
+      <!-- Section 3 : Formulaire pour créer une mission -->
+      <section class="col-md-4">
+        <%= simple_form_for @mission, url: missions_path, html: { multipart: true, class: 'mission-form' } do |f| %>
+        <h2 class="section-title">Créer une nouvelle mission</h2>
+          <div class="form-group">
+            <%= f.input :title, label: "Titre de la mission", class: 'form-input' %>
+          </div>
 
-        <div class="form-group">
-          <%= f.input :description, label: "Description", class: 'form-input' %>
-        </div>
+          <div class="form-group">
+            <%= f.input :description, label: "Description", class: 'form-input' %>
+          </div>
 
-        <div class="form-group">
-          <%= f.input :category, collection: Mission::CATEGORIES, prompt: "Sélectionnez une catégorie", label: "Catégorie", class: 'form-control form-input' %>
-        </div>
+          <div class="form-group">
+            <%= f.input :category, collection: Mission::CATEGORIES, prompt: "Sélectionnez une catégorie", label: "Catégorie", class: 'form-control form-input' %>
+          </div>
 
-        <div class="form-group">
-          <%= f.input :address, label: "Adresse / Lieu", class: 'form-input' %>
-        </div>
+          <div class="form-group">
+            <%= f.input :address, label: "Adresse / Lieu", class: 'form-input' %>
+          </div>
 
-        <div class="form-group">
-          <%= f.input :start_date,  as: :string,
-            input_html: { data: { controller: "datepicker" } }, label: "Date de début", class: 'form-control form-input' %>
-        </div>
+          <div class="form-group">
+            <%= f.input :start_date,  as: :string,
+              input_html: { data: { controller: "datepicker" } }, label: "Date de début", class: 'form-control form-input' %>
+          </div>
 
-        <div class="form-group">
-          <%= f.input :end_date, as: :string,
-            input_html: { data: { controller: "datepicker" } }, label: "Date de fin", class: 'form-input' %>
-        </div>
+          <div class="form-group">
+            <%= f.input :end_date, as: :string,
+              input_html: { data: { controller: "datepicker" } }, label: "Date de fin", class: 'form-input' %>
+          </div>
 
-        <div class="form-group">
-          <%= f.input :photo, as: :file, label: "Image de la mission", class: ' form-input' %>
-        </div>
+          <div class="form-group">
+            <%= f.input :photo, as: :file, label: "Image de la mission", class: ' form-input' %>
+          </div>
 
-        <div class="form-group">
-          <%= f.button :submit, "Créer la mission", class: 'form-button-mission' %>
-        </div>
-      <% end %>
-    </section>
+          <div class="form-group">
+            <%= f.button :submit, "Créer la mission", class: 'form-button-mission' %>
+          </div>
+        <% end %>
+      </section>
 
-    </div>
-</div>
+      </div>
+  </div>
+</body>
