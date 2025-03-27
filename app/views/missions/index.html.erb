@@ -39,7 +39,7 @@
           <% @missions.each do |mission|%>
             <div class="d-flex align-items-center position-absolute gap-3" data-controller="swipe">
               <div class="pointer" data-action="click->swipe#dislike">
-                <i class="fa-solid fa-circle-xmark fs-1"></i>
+                <i class="fa-solid fa-circle-xmark"></i>
               </div>
 
               <div class="card" data-swipe-target="card">
@@ -56,7 +56,7 @@
 
               <div>
                 <%= link_to favorites_path(mission), data: {turbo_method: :post, action:"click->swipe#like"} do %>
-                  <i class="fa-solid fa-heart fs-1"></i>
+                  <i class="fa-solid fa-heart pointer"></i>
                 <% end %>
               </div>
             </div>

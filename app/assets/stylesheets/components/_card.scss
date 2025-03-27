@@ -1,12 +1,12 @@
 .card-list-container {
   width: 750px;
-  height: 550px;
+  height: 650px;
   position: relative;
 }
 .card {
   display: flex;
-  width: 637px;
-  height: 550px;
+  width: 620px;
+  height: 650px;
   flex-direction: column;
   align-items: flex-start;
   flex-shrink: 0;
@@ -18,8 +18,8 @@
 
 
   img {
-    width: 633px;
-    height: 300px;
+    width: 615px;
+    height: 350px;
     flex-shrink: 0;
     border-radius: 12px;
     // border: 0px solid #000;
@@ -30,7 +30,7 @@
 }
 
 .card-infos {
-  padding: 16px;
+  padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
