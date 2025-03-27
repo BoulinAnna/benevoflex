@@ -54,9 +54,9 @@
                 </div>
               </div>
 
-              <div>
+              <div class="pointer">
                 <%= link_to favorites_path(mission), data: {turbo_method: :post, action:"click->swipe#like"} do %>
-                  <i class="fa-solid fa-heart pointer"></i>
+                  <i class="fa-solid fa-heart"></i>
                 <% end %>
               </div>
             </div>
@@ -64,7 +64,7 @@
         </div>
 
         <div class="dashboard-button">
-          <%= link_to "J'accède à ma sélection", dashboard_path, class:"btn my-3"%>
+          <%= link_to "J'accède à ma sélection", dashboard_path, class:"btn my-3 btn-large"%>
         </div>
       </div>
     </div>

@@ -47,7 +47,6 @@ body, html {
 }
 
 
-
 .pointer {
   cursor: pointer;
   color: $navy;
@@ -55,6 +54,11 @@ body, html {
   margin: 0 10px;
 }
 
+
+
+.dashboard-button {
+  margin-left: 40px;
+}
 
 // --- Effet de swipe ---
 
