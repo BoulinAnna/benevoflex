@@ -11,6 +11,9 @@ body, html {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  margin-bottom: 0;
+  min-height: calc(100vh - 100px);
+  box-sizing: border-box;
 }
 
 

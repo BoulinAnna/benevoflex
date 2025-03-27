@@ -9,7 +9,7 @@
 .swiper-slide {
   display: flex;
   justify-content: center;
-  margin-bottom: 73px;
+  margin-bottom: 50px;
 }
 
 .testimonials-big-title{
@@ -23,11 +23,11 @@
 
     color: $navy;
     font-family: "Bowlby One SC";
-    font-size: 25px;
-    font-weight: 400;
-    line-height: normal;
+    font-size: 30px;
+    // font-weight: 400;
+    // line-height: normal;
     letter-spacing: 1px;
-    margin-top: 30px; // Ajoute un espace au-dessus du titre
+    //margin-top: 30px; // Ajoute un espace au-dessus du titre
   }
 
 }
@@ -49,14 +49,14 @@
     font-weight: 400;
     line-height: normal;
     letter-spacing: 1px;
-    margin-top: 30px; // Ajoute un espace au-dessus du titre
+   // margin-top: 30px; // Ajoute un espace au-dessus du titre
   }
 }
 
 // Conteneur de chaque témoignage (image + texte)
 .testimonial-content {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   justify-content: space-between; // Sépare l'image et le texte
   width: 80%;
   max-width: 1100px;
@@ -66,7 +66,7 @@
 
 // Image des témoignages
 .testimonial-image {
-  width: 45%;
+  max-width: 45%;
   height: auto;
   border-radius: 3px;
 }
@@ -81,18 +81,19 @@
   h3 {
     color: $sable;
     font-family: "Bowlby One SC", sans-serif;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 1.5;
-    text-align: left;
+    text-align: center;
     letter-spacing: 1px;
   }
 
   p {
-    margin-bottom: -40px; // Ajoute un espace sous le texte
+    // margin-bottom: -40px; // Ajoute un espace sous le texte
+    padding: 45px;
     color: $sable;
     text-align: center;
     font-family: "Oxygen";
-    font-size: 17px;
+    font-size: 19px;
     font-style: normal;
     font-weight: 400;
     line-height: 30px; /* 166.667% */

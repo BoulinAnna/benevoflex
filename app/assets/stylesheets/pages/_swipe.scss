@@ -1,11 +1,18 @@
+body, html {
+  background-color: #5B6C50;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 .swipe {
   background-color: $kaki;
 }
 
+// ---- form  ----
 .swipe-form {
   background-color: $sable;
   width: 300px;
-  margin-right: 30px;
   box-shadow: 7px 4px 29px 9px rgba(0, 0, 0, 0.25);
 }
 
@@ -29,26 +36,27 @@
   height: fit-content;
 }
 
-
+// ---- Cards + bouton ----
 
 .central-elements {
   display: flex;
-  margin: 15px auto 35px auto;
-  padding-top: 50px;
-  height: 105vh;
-  align-items: baseline;
-  align-content: center;
-  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
 }
 
-.dashboard-button {
-  margin-left: 250px;
-}
+
 
 .pointer {
   cursor: pointer;
   color: $navy;
+  font-size: 50px;
+  margin: 0 10px;
 }
+
+
+// --- Effet de swipe ---
 
 .card-to-right {
   animation-duration: 1s;
